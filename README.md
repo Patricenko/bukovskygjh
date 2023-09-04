@@ -1,11 +1,10 @@
 # GJH školský repozitár
 Patrik Bukovský III.C
-## Projekty
-### 2022/2023
-+ [Bludisko](Bludisko27012023)
-+ Sudoku
-+ [Webstránka](https://turing.gjh.sk/~bukovsky.p/)
-### 2023/2024
-+ TODO
+
+|      Typ      |                    2022/2023                    | 2023/2024  |
+|:-------------:|:-----------------------------------------------:|:----------:|
+|   Projekty    |    [Bludisko](Bludisko2023),[Sudoku](Sudoku)    |    new     |
+|   Programy    |                   [Old](Old)                    |    new     |
+|  Prezentácie  | [Ako Postaviť Počítač](pptx/Akopostaviťpočítač.pptx) |    new     |
 
 
