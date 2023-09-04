@@ -1,2 +1,3 @@
-# bukovskygjh
-Patrik Bukovský private GJH repository
+# GJH školský repozitár
+## Patrik Bukovský III.C
+
