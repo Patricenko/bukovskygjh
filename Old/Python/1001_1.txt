@@ -1,0 +1,5 @@
+Fero 4 1 1 1 3
+Anka 5 2 3 1
+Patrik 1 1 1 2 5 1
+Denis 5 5 5 5 1 1 1 1
+Jozo 5 4 3 2 2

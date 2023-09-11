@@ -1,0 +1,5 @@
+400 200 NewYork 1000000
+600 500 Prievidza 500000
+100 50 Bratislava 250000
+600 400 Hamuliakovo 100000
+100 550 Gustavovo 2000000

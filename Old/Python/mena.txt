@@ -1,0 +1,13 @@
+
+Team 1
+1
+Team 2
+1
+Team 3
+2
+Team 4
+1
+Team 5
+100
+Hra
+1
