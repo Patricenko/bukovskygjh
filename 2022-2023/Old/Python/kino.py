@@ -23,7 +23,7 @@ def klik(sur):
     c.create_rectangle(x*50,y*50,x*50+50,y*50+50, fill=color)
 def load(vstup):
     kino = []
-    f = open('kino.txt','r')
+    f = open('kino.txt', 'r')
     r = f.readlines()
     while r != '':
         rad = r.strip().split()

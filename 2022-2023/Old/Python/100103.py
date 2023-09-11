@@ -1,5 +1,5 @@
 import tkinter
-f = open('100102.txt','r')
+f = open('100102.txt', 'r')
 c = tkinter.Canvas(width=701, height=701)
 while f:
     l = f.readline()

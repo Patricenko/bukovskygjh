@@ -1,4 +1,4 @@
-f = open('1001_1.txt','r')
+f = open('1001_1.txt', 'r')
 x = 0
 while f:
     l = f.readline()

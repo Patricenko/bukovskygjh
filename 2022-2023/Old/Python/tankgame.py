@@ -1,6 +1,6 @@
 from tkinter import Canvas, Tk, Menu
 def save():
-    f = open('map.txt','w')
+    f = open('map.txt', 'w')
     print('Saving...')
     for i in range (len(mapa)):
         for j in range(len(mapa[i])):
@@ -9,7 +9,7 @@ def save():
     f.close()
 def load():
     global mapa
-    f = open('map.txt','r')
+    f = open('map.txt', 'r')
     print('Loading...')
     mapa = []
     r = f.readline()

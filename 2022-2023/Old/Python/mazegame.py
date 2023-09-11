@@ -3,7 +3,7 @@ import time
 up, down, left, right = 0
 def load():
     global mapa
-    f = open('map.txt','r')
+    f = open('map.txt', 'r')
     print('Loading...')
     mapa = []
     r = f.readline()

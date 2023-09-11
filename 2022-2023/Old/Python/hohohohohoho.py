@@ -1,6 +1,6 @@
 import tkinter
 c = tkinter.Canvas(width=1920, height=700)
-subor = open("mapa.txt","r")
+subor = open("mapa.txt", "r")
 listen = list(subor.read())
 pocten = [0,0,0,0,0,0]
 teren = ['zem','moria','puste','jazera','lesy','zasnezene']

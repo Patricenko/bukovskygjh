@@ -1,8 +1,8 @@
 import tkinter
 c = tkinter.Canvas(width=1920, height=1080)
 c.pack()
-subor = open("mena.txt","r")
-suborpocet = sum(1 for line in open('mena.txt','r'))-1
+subor = open("mena.txt", "r")
+suborpocet = sum(1 for line in open('mena.txt', 'r')) - 1
 pocetdruziniek = int(suborpocet/2)
 rozy = 1000/pocetdruziniek
 ##########################
@@ -18,7 +18,7 @@ for i in range (pocetdruziniek):
 def move():
     global rozy, pismo, a, p
     c.delete('all')
-    subor = open("mena.txt","r")
+    subor = open("mena.txt", "r")
     t = subor.readlines()
     y = 5
     posint = 0
