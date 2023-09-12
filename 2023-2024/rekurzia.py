@@ -1,16 +1,13 @@
 import tkinter as tk
 c = tk.Canvas()
-
-def circle(x,y,r):
+def circle(x,y,r,z):
     c.create_oval(x-r,y-r,x+r,y+r)
-    r -= 1
-    x += 2*r + 1
-    if r == 1:
+    if r == z:
         return print('koniec')
-    circle(x,y,r)
+    circle(x+2*r-z,y,r-z,z)
 
 x = list(map(int,input().split()))
-circle(x[0],x[1],x[2])
+circle(x[0],x[1],x[2],x[3])
 
 c.pack()
 c.mainloop()
