@@ -1,6 +1,8 @@
 import tkinter as tk
+import time
 c = tk.Canvas()
 def circle(x,y,r,z):
+    time.sleep(0.5)
     c.create_oval(x-r,y-r,x+r,y+r)
     if r <= z:
         return print('koniec')
