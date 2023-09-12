@@ -2,7 +2,7 @@ import tkinter as tk
 c = tk.Canvas()
 def circle(x,y,r,z):
     c.create_oval(x-r,y-r,x+r,y+r)
-    if r == z:
+    if r <= z:
         return print('koniec')
     circle(x+2*r-z,y,r-z,z)
 
