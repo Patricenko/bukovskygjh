@@ -14,7 +14,7 @@ def square2(x,y,r,z):
 
 x = list(map(int,input().split()))
 if x[0] == 0: square(x[1],x[2],x[3],x[4])
-else: square2(x[1],x[2],x[3],x[4])
+elif x[0] == 1: square2(x[1],x[2],x[3],x[4])
 
 c.pack()
 c.mainloop()
