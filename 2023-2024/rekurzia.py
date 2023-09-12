@@ -6,10 +6,11 @@ def circle(x,y,r):
     r -= 1
     x += 2*r + 1
     if r == 1:
-        return
+        return print('koniec')
     circle(x,y,r)
 
 x = list(map(int,input().split()))
 circle(x[0],x[1],x[2])
+
 c.pack()
 c.mainloop()
