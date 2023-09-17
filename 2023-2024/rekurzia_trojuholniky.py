@@ -1,6 +1,7 @@
 # uloha urobit trojuholnik v trojuholnikoch
 import tkinter
 import random
+import time
 
 okno = tkinter.Tk()
 sirka = 400
@@ -13,9 +14,11 @@ x2 = 10
 y2 = vyska - 10
 x3 = sirka - 10
 y3 = vyska - 10
-hlbka = 5  # Zmeniť hĺbku podľa potreby
+hlbka = 6  # Zmeniť hĺbku podľa potreby
 
 def trojuholnik(c, hlbka, x1, y1, x2, y2, x3, y3):
+    time.sleep(0.01)
+    c.update()
     if hlbka == 0:
         fill_color = "#{:02x}{:02x}{:02x}".format(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         c.create_polygon(x1, y1, x2, y2, x3, y3, fill=fill_color, outline="black")
