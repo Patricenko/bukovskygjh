@@ -1,11 +1,11 @@
 # uloha urobit trojuholnik v trojuholnikoch
-import tkinter as tk
+import tkinter
 import random
 
-okno = tk.Tk()
+okno = tkinter.Tk()
 sirka = 400
 vyska = 400
-c = tk.Canvas(okno, width=sirka, height=vyska)
+c = tkinter.Canvas(okno, width=sirka, height=vyska)
 c.pack()
 x1 = sirka / 2
 y1 = 10
