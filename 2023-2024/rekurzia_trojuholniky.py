@@ -18,28 +18,19 @@ def trojuholnik(canvas, hlbka, x1, y1, x2, y2, x3, y3):
         trojuholnik(canvas, hlbka - 1, x1, y1, x12, y12, x31, y31)
         trojuholnik(canvas, hlbka - 1, x12, y12, x2, y2, x23, y23)
         trojuholnik(canvas, hlbka - 1, x31, y31, x23, y23, x3, y3)
-
-
 def main():
     okno = tk.Tk()
-
     sirka = 400
     vyska = 400
     canvas = tk.Canvas(okno, width=sirka, height=vyska)
     canvas.pack()
-
     x1 = sirka / 2
     y1 = 10
     x2 = 10
     y2 = vyska - 10
     x3 = sirka - 10
     y3 = vyska - 10
-
     hlbka = 5  # Zmeniť hĺbku podľa potreby
-
     trojuholnik(canvas, hlbka, x1, y1, x2, y2, x3, y3)
-
     okno.mainloop()
-
-
 main()
