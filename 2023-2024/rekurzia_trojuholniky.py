@@ -17,8 +17,7 @@ hlbka = 5  # Zmeniť hĺbku podľa potreby
 
 def trojuholnik(c, hlbka, x1, y1, x2, y2, x3, y3):
     if hlbka == 0:
-        fill_color = "#{:02x}{:02x}{:02x}".format(random.randint(0, 255), random.randint(0, 255),
-                                                  random.randint(0, 255))
+        fill_color = "#{:02x}{:02x}{:02x}".format(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         c.create_polygon(x1, y1, x2, y2, x3, y3, fill=fill_color, outline="black")
     else:
         x12 = (x1 + x2) / 2
