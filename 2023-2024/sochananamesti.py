@@ -1,58 +1,76 @@
 import tkinter
 import random as r
 import time
-a = 32
-s = 9
-a = 5
-strana_stvorec = 2**a
-strana_plocha = 2**s
-c = tkinter.Canvas(width = strana_plocha, height = strana_plocha)
+global strana_stvorec, strana_plocha, spinkaj
+strana_stvorec = 20
+strana_plocha = 2**10
+spinkaj = 0.1
+k = int(strana_plocha**0.5)
+c = tkinter.Canvas(width = k*strana_stvorec, height = k*strana_stvorec)
 c.pack()
-def zistikvadrant(socha,hlbka):
-    kvadrant = strana_plocha / (2*hlbka)
-    if socha[0] < kvadrant:
-        if socha[1] < kvadrant: return 0
-        if socha[1] >= kvadrant: return 2
-    if socha[0] >= kvadrant:
-        if socha[1] < kvadrant: return 1
-        if socha[1] >= kvadrant: return 3
-# vymazat potom plocha(), len na ucely ukazania
-def plocha():
-    for i in range(strana_plocha//strana_stvorec):
-        for j in range(strana_plocha//strana_stvorec):
-            c.create_rectangle(i*strana_stvorec+2,j*strana_stvorec+2, i*strana_stvorec + strana_stvorec+2, j*strana_stvorec + strana_stvorec+2)
-def dlazdi(socha,hlbka):
-    if hlbka == 0:
-        socha = (r.randint(0, strana_plocha//strana_stvorec)*strana_stvorec, r.randint(0, strana_plocha//strana_stvorec)*strana_stvorec)
-        c.create_rectangle(socha[0]+2,socha[1]+2,socha[0]+strana_stvorec+2, socha[1]+strana_stvorec+2, fill = "red")
-        print(socha)
-        return dlazdi(socha,hlbka+1)
-    else:
-        time.sleep(0.5)
-        c.update()
-        k = zistikvadrant(socha,hlbka)
-        bod = strana_plocha // (2*hlbka)
-        print(bod)
-        match k:
-            case 0:
-                PD(bod)
-            case 1:
-                LD(bod)
-            case 2:
-                PH(bod)
-            case 3:
-                LH(bod)
-    return dlazdi(socha,hlbka+1)
-def LH(bod):
-    return c.create_polygon(bod,bod)
-def PH(bod):
-    return
-def LD(bod):
-    return
-def PD(bod):
-    return
+#####################################################################
+def LH(k, bod, novybod):
+    c.create_polygon(novybod[0] * strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec,
+                     novybod[0] * strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec, fill="pink")
+    time.sleep(spinkaj)
+    c.update()
+    time.sleep(spinkaj)
+    c.update()
+    dlazdi(k/2, bod, (novybod[0]-k/2,novybod[1]-k/2))
+    dlazdi(k/2, (novybod[0],novybod[1]-1),(novybod[0]+k/2,novybod[1]-k/2))
+    dlazdi(k/2, novybod,(novybod[0]+k/2,novybod[1]+k/2))
+    dlazdi(k/2, (novybod[0]-1,novybod[1]), (novybod[0]-k/2,novybod[1]+k/2))
+def LD(k, bod, novybod):
+    c.create_polygon(novybod[0] * strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec,
+                     novybod[0] * strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec, fill="purple")
+    time.sleep(spinkaj)
+    c.update()
+    dlazdi(k/2, (bod[0], bod[1]), (novybod[0]-k/2, novybod[1]+k/2))
+    dlazdi(k/2, (novybod[0], novybod[1]), (novybod[0]+k/2, novybod[1]+k/2))
+    dlazdi(k/2, (novybod[0]-1, novybod[1]-1), (novybod[0]-k/2, novybod[1]-k/2))
+    dlazdi(k/2, (novybod[0], novybod[1]-1), (novybod[0]+k/2, novybod[1]-k/2))
+def PH(k, bod, novybod):
+    c.create_polygon(novybod[0] * strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec,
+                     novybod[0] * strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec, fill="magenta")
+    time.sleep(spinkaj)
+    c.update()
+    dlazdi(k/2, (bod[0], bod[1]), (novybod[0]+k/2, novybod[1]-k/2))
+    dlazdi(k/2, (novybod[0]-1, novybod[1]-1), (novybod[0]-k/2, novybod[1]-k/2))
+    dlazdi(k/2, (novybod[0]-1, novybod[1]), (novybod[0]-k/2, novybod[1]+k/2))
+    dlazdi(k/2, (novybod[0], novybod[1]), (novybod[0]+k/2, novybod[1]+k/2))
+def PD(k, bod, novybod):
+    c.create_polygon(novybod[0] * strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec,
+                     novybod[0] * strana_stvorec + strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec - strana_stvorec,
+                     novybod[0] * strana_stvorec - strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec,
+                     novybod[0] * strana_stvorec, novybod[1] * strana_stvorec + strana_stvorec, fill="blue")
+    time.sleep(spinkaj)
+    c.update()
+    dlazdi(k/2, (bod[0], bod[1]), (novybod[0]+k/2, novybod[1]+k/2))
+    dlazdi(k/2, (novybod[0]-1, novybod[1]-1), (novybod[0]-k/2, novybod[1]-k/2))
+    dlazdi(k/2, (novybod[0], novybod[1]-1), (novybod[0]+k/2, novybod[1]-k/2))
+    dlazdi(k/2, (novybod[0]-1, novybod[1]), (novybod[0]-k/2, novybod[1]+k/2))
+def dlazdi(k, bod, novybod):
+    if k >= 1:
+        if bod[0] < novybod[0] and bod[1] < novybod[1]: LH(k, bod, novybod)
+        elif bod[0] < novybod[0] and bod[1] >= novybod[1]: LD(k, bod, novybod)
+        elif bod[0] >= novybod[0] and bod[1] < novybod[1]: PH(k, bod, novybod)
+        elif bod[0] >= novybod[0] and bod[1] >= novybod[1]: PD(k, bod, novybod)
 
-plocha()
-dlazdi((0,0),0)
-
+bod = (r.randint(0, k-1), r.randint(0, k-1))
+c.create_rectangle(bod[0] * strana_stvorec, bod[1] * strana_stvorec, bod[0]*strana_stvorec + strana_stvorec, bod[1]*strana_stvorec + strana_stvorec,fill="black")
+dlazdi(k/2, bod,(k/2,k/2))
 c.mainloop()
