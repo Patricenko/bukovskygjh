@@ -1,7 +1,5 @@
-import tkinter
+import tkinter, time
 import random as r
-import time
-global strana_stvorec, strana_plocha, spinkaj
 strana_stvorec = 20
 strana_plocha = 2**10
 spinkaj = 0.1
