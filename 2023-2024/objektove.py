@@ -2,13 +2,14 @@ import tkinter
 import random
 import time
 class Tkruh:
-    def __init__(self, x, y, r = 25):
+    def __init__(self, x, y, h, r = 15):
         self.x = x
         self.y = y
         self.r = r
+        self.h = h
         fill_color = "#{:02x}{:02x}{:02x}".format(random.randint(0, 255), random.randint(0, 255),random.randint(0, 255))
         self.tvar = c.create_oval(self.x - self.r, self.y - self.r, self.x + self.r, self.y + self.r, fill = fill_color)
-        self.popis = c.create_text(self.x, self.y, text=str(f'{x},{y}'))
+        self.popis = c.create_text(self.x, self.y, text=str(h))
 
     def zmenhodnotu(self, h):
         self.h = h
@@ -17,14 +18,14 @@ class Tkruh:
         self.r = self.r+r
         c.coords(self.tvar, self.x - self.r, self.y - self.r, self.x + self.r, self.y + self.r)
     def nahodnemen(self):
-        self.x = self.x+random.randrange(-20,20)
-        self.y = self.y+random.randrange(-20,20)
+        self.x = self.x+random.randrange(-20,21)
+        self.y = self.y+random.randrange(-20,21)
         if self.x < self.r: self.x = self.r
         if self.x >= 500-self.r: self.x = 500-self.r
         if self.y < self.r: self.y = self.r
         if self.y >= 500-self.r: self.y = 500-self.r
         c.coords(self.tvar, self.x-self.r, self.y-self.r, self.x+self.r, self.y+self.r)
-        self.zmenhodnotu(f'{self.x},{self.y}')
+        #self.zmenhodnotu(f'{self.x},{self.y}')
         c.coords(self.popis, self.x, self.y)
         c.update()
 def leftclick(sur):
@@ -46,11 +47,11 @@ c.bind("<Button-3>",rightclick)
 c.bind("<Button-2>",scrollclick)
 c.bind('<Button-1>',leftclick)
 kruhy = []
-for i in range(100):
-    kruhy.append(Tkruh(250,250, 20))
+for i in range(500):
+    kruhy.append(Tkruh(random.randrange(100,400),random.randrange(100,400), i,20))
     kruhy[i].nahodnemen()
 while True:
-    time.sleep(0.1)
+    time.sleep(0.05)
     for i in kruhy:
         i.nahodnemen()
 
