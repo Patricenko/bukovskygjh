@@ -6,7 +6,7 @@ class Pexeso:
         self.a = a
         self.o = o
         self.colors = ['red','yellow','blue','lime','black']
-        self.items = ['Arthas','Jaina','Thrall','Sylvannas','Archimonde', 'Kelthuzad','Algalon','Raszageth']
+        self.items = ['Arthas','Jaina','Thrall','Sylvannas','Archimonde', 'Kelthuzad','Algalon','Raszageth','Terenas','Abberus']
         self.list = 2*self.items
         self.active = None
         self.done = []
@@ -26,29 +26,30 @@ class Pexeso:
         x = 0
         for i in range(4):
             row = []
-            for j in range(4):
+            for j in range(5):
                 x += 1
-                s = (self.Karta(j*a, i*a, j + 4 * i))
+                s = (self.Karta(j*a, i*a, x))
                 s.shape = self.c.create_rectangle(o + j * a, o + i * a, o + j * a + a, o + i * a + a, fill = 'red')
                 s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',20))
                 row.append(s)
             self.plocha.append(row)
 
     def randomize(self):
+        print(len(self.plocha),len(self.plocha[0]))
         random.shuffle(self.list)
         x = 0
         for i in range (4):
-            for j in range (4):
-                s = self.plocha[j][i]
+            for j in range (5):
+                s = self.plocha[i][j]
                 self.c.itemconfig(s.obsah, text=self.list[x], fill=self.colors[0])
                 s.value = self.list[x]
                 x += 1
     def YouWon(self):
         for i in range (4):
-            for j in range (4):
-                s = self.plocha[j][i]
+            for j in range (5):
+                s = self.plocha[i][j]
                 self.c.itemconfig(s.shape, fill=self.colors[2])
-        wintime = self.c.create_text(self.o + self.a * 2, self.o + self.a * 2, font=('Arial bold', 200), fill=self.colors[0], text='5')
+        wintime = self.c.create_text(self.o + self.a * 2.5, self.o + self.a * 2, font=('Arial bold', 200), fill=self.colors[0], text='5')
         self.c.update()
         time.sleep(1)
         for i in range (-4,0,1):
@@ -60,8 +61,8 @@ class Pexeso:
     def click(self, sur):
         a = self.a
         for i in range (4):
-            for j in range (4):
-                s = self.plocha[j][i]
+            for j in range (5):
+                s = self.plocha[i][j]
                 if sur.x >= s.x and sur.x <= s.x+a:
                     if sur.y >= s.y and sur.y <= s.y+a:
                         if s in self.done:
@@ -79,7 +80,7 @@ class Pexeso:
                                 self.done.append(s)
 
                                 self.active = None
-                                if len(self.done) == 16:
+                                if len(self.done) == 20:
                                     self.YouWon()
                             elif self.active.value == s.value and self.active == s:
                                 return
