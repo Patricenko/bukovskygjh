@@ -2,11 +2,12 @@ from tkinter import Canvas, Tk, Menu, Button
 import modul
 global current
 
-def load(lvl):
+def load(clvl):
     global current, o, a
-    if lvl >= 5:
+    level.entryconfig(1,label = f"Current: {clvl}")
+    if clvl >= 5:
         a = 150
-    current = modul.Pexeso(o, a, c, lvl)
+    current = modul.Pexeso(o, a, c, clvl, level)
 
 lvl = 0
 o = 10

@@ -1,10 +1,11 @@
 import random, time
 class Pexeso:
-    def __init__(self, o, a, c, level):
+    def __init__(self, o, a, c, level, m):
         self.plocha = []
         self.c = c
         self.a = a
         self.o = o
+        self.menu = m
         self.colors = ['red','yellow','blue','lime','black']
         self.choice = ['Arthas','Jaina','Thrall','Sylvannas','Archimonde', 'Kelthuzad','Algalon','Raszageth','Terenas','Abberus','Halion','Lich King','Sarkareth','Illidan','Darion','Fordragon','Wrynn','Antonidas']
         self.items = []
@@ -25,6 +26,7 @@ class Pexeso:
         for i in range(int((self.a0 * self.b0) / 2)): self.items.append(self.choice[i])
         self.c.delete('all')
         self.c.config(width=2 * o + a * self.b0, height=2 * o + a * self.a0)
+        self.menu.entryconfig(1,label = f"Current: {self.level}")
         self.list = 2*self.items
         self.active = None
         self.done = []
@@ -79,7 +81,7 @@ class Pexeso:
             return
         if self.level >= 4:
             self.a = 150
-        self.__init__(self.o,self.a,self.c,self.level+1)
+        self.__init__(self.o,self.a,self.c,self.level+1, self.menu)
     def click(self, sur):
         a = self.a
         for i in range (self.a0):
