@@ -19,19 +19,19 @@ class Pexeso:
             case 4:
                 self.a0,self.b0=4,7
             case 5:
-                self.a0, self.b0 = 5, 6
+                self.a0,self.b0=5,6
             case 6:
-                self.a0, self.b0 = 6, 6
+                self.a0,self.b0=6,6
         for i in range(int((self.a0 * self.b0) / 2)): self.items.append(self.choice[i])
         self.c.delete('all')
         self.c.config(width=2 * o + a * self.b0, height=2 * o + a * self.a0)
-        self.c.bind('<Button-1>', self.click)
         self.list = 2*self.items
         self.active = None
         self.done = []
 
         self.spawn()
         self.randomize()
+        self.c.bind('<Button-1>', self.click)
     class Karta:
         def __init__(self,x,y,value):
             self.x = x
@@ -74,7 +74,8 @@ class Pexeso:
             self.c.itemconfig(wintime, text=-i)
             self.c.update()
             time.sleep(1)
-        if self.level == 5:
+        if self.level == 6:
+            self.c.itemconfig(wintime,font=('Arial',100) ,text='THE END, GG')
             return
         if self.level >= 4:
             self.a = 150
@@ -112,6 +113,11 @@ class Pexeso:
                                 self.c.itemconfig(self.active.shape, fill = self.colors[0])
                                 self.c.itemconfig(s.shape, fill=self.colors[0])
                                 self.active = None
+    def cheat(self):
+        for i in range (self.a0):
+            for j in range (self.b0):
+                s = self.plocha[i][j]
+                self.c.itemconfig(s.obsah, fill=self.colors[3])
 
 
 
