@@ -1,15 +1,18 @@
-import random
+import random, time
 class Pexeso:
     def __init__(self, o, a, c):
         self.plocha = []
-        self.vyber = None
         self.c = c
         self.a = a
         self.o = o
+        self.colors = ['red','yellow','blue','lime']
+        self.items = ['BANANA','APPLE','COCONUT','PINEAPPLE','YOUR MOM', 'TOOTHPASTE','CEMETERY','SAD STORY']
+        self.list = 2*self.items
+        self.active = None
+        self.done = []
+
         self.spawn()
         self.randomize()
-        self.colors = ['red','yellow','blue']
-        self.items = ['BANANA','APPLE','COCONUT','PINEAPPLE','YOUR MOM', 'TOOTHPASTE','CEMETERY','SAD STORY']
     class Karta:
         def __init__(self,x,y,value):
             self.x = x
@@ -20,30 +23,67 @@ class Pexeso:
     def spawn(self):
         a = self.a
         o = self.o
+        x = 0
         for i in range(4):
             row = []
             for j in range(4):
-                s = (self.Karta(j, i, j + 4 * i))
+                x += 1
+                s = (self.Karta(j*a, i*a, j + 4 * i))
                 s.shape = self.c.create_rectangle(o + j * a, o + i * a, o + j * a + a, o + i * a + a, fill = 'red')
+                s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',20))
                 row.append(s)
             self.plocha.append(row)
-        self.vyber = self.plocha
-    def IsNotIn(self,x):
-        p = 0
-        for i in range(4):
-            for j in range(4):
-                if self.plocha[j][i].obsah == x: p += 1
-        if p == 0: return True
-        if p == 1: return True
-        if p == 2: return False
-        if p > 2: print('ERROR')
 
     def randomize(self):
-        i0 = random.randrange(0,len(self.plocha)-1)
-        j0 = random.randrange(0, len(self.plocha)-1)
-        i1 = random.randrange(0, len(self.plocha) - 1)
-        j1 = random.randrange(0, len(self.plocha) - 1)
-        if self.plocha[j0][i0]
+        random.shuffle(self.list)
+        print(self.list)
+        x = 0
+        for i in range (4):
+            for j in range (4):
+                s = self.plocha[j][i]
+                self.c.itemconfig(s.obsah, text=self.list[x], fill=self.colors[0])
+                s.value = self.list[x]
+                x += 1
+    def YouWon(self):
+        for p in range(10):
+            time.sleep(0.1)
+            for i in range (4):
+                for j in range (4):
+                    s = self.plocha[j][i]
+                    self.c.itemconfig(s.shape, fill=self.colors[2])
+    def click(self, sur):
+        a = self.a
+        for i in range (4):
+            for j in range (4):
+                s = self.plocha[j][i]
+                if sur.x >= s.x and sur.x <= s.x+a:
+                    if sur.y >= s.y and sur.y <= s.y+a:
+                        if s in self.done:
+                            return
+                        if not self.active:
+                            self.active = s
+                            self.c.itemconfig(s.shape, fill = self.colors[1])
+                        else:
+                            if self.active.value == s.value and self.active != s:
+                                self.c.itemconfig(s.shape, fill = self.colors[3])
+                                self.c.itemconfig(self.active.shape, fill = self.colors[3])
+                                self.done.append(self.active)
+                                self.done.append(s)
+
+                                self.active = None
+                                if len(self.done) == 16:
+                                    self.YouWon()
+                            elif self.active.value == s.value and self.active == s:
+                                return
+                            else:
+                                self.c.itemconfig(s.shape, fill=self.colors[1])
+                                self.c.update()
+                                time.sleep(0.5)
+                                self.c.itemconfig(self.active.shape, fill = self.colors[0])
+                                self.c.itemconfig(s.shape, fill=self.colors[0])
+                                self.active = None
+
+
 
 
 
