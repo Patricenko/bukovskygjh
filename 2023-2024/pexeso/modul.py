@@ -51,18 +51,11 @@ class Pexeso:
         wintime = self.c.create_text(self.o + self.a * 2, self.o + self.a * 2, font=('Arial bold', 200), fill=self.colors[0], text='5')
         self.c.update()
         time.sleep(1)
-        self.c.itemconfig(wintime, text='4')
-        self.c.update()
-        time.sleep(1)
-        self.c.itemconfig(wintime, text='3')
-        self.c.update()
-        time.sleep(1)
-        self.c.itemconfig(wintime, text='2')
-        self.c.update()
-        time.sleep(1)
-        self.c.itemconfig(wintime, text='1')
-        self.c.update()
-        time.sleep(1)
+        for i in range (-4,0,1):
+            self.c.itemconfig(wintime, text=-i)
+            self.c.update()
+            time.sleep(1)
+
         self.__init__(self.o,self.a,self.c)
     def click(self, sur):
         a = self.a
