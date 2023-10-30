@@ -5,8 +5,8 @@ class Pexeso:
         self.c = c
         self.a = a
         self.o = o
-        self.colors = ['red','yellow','blue','lime']
-        self.items = ['BANANA','APPLE','COCONUT','PINEAPPLE','YOUR MOM', 'TOOTHPASTE','CEMETERY','SAD STORY']
+        self.colors = ['red','yellow','blue','lime','black']
+        self.items = ['Arthas','Jaina','Thrall','Sylvannas','Archimonde', 'Kelthuzad','Algalon','Raszageth']
         self.list = 2*self.items
         self.active = None
         self.done = []
@@ -45,12 +45,10 @@ class Pexeso:
                 s.value = self.list[x]
                 x += 1
     def YouWon(self):
-        for p in range(10):
-            time.sleep(0.1)
-            for i in range (4):
-                for j in range (4):
-                    s = self.plocha[j][i]
-                    self.c.itemconfig(s.shape, fill=self.colors[2])
+        for i in range (4):
+            for j in range (4):
+                s = self.plocha[j][i]
+                self.c.itemconfig(s.shape, fill=self.colors[2])
     def click(self, sur):
         a = self.a
         for i in range (4):
@@ -67,6 +65,8 @@ class Pexeso:
                             if self.active.value == s.value and self.active != s:
                                 self.c.itemconfig(s.shape, fill = self.colors[3])
                                 self.c.itemconfig(self.active.shape, fill = self.colors[3])
+                                self.c.itemconfig(s.obsah, fill=self.colors[4])
+                                self.c.itemconfig(self.active.obsah, fill=self.colors[4])
                                 self.done.append(self.active)
                                 self.done.append(s)
 
