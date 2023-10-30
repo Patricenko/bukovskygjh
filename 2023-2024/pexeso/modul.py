@@ -36,7 +36,6 @@ class Pexeso:
 
     def randomize(self):
         random.shuffle(self.list)
-        print(self.list)
         x = 0
         for i in range (4):
             for j in range (4):
