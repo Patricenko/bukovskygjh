@@ -12,6 +12,9 @@ def load4():
 def load5():
     a = 150
     current = modul.Pexeso(o, a, c, 5)
+def load6():
+    a = 150
+    current = modul.Pexeso(o, a, c, 6)
 
 
 o = 10
@@ -20,11 +23,12 @@ a = 200
 main = Tk()
 main.title('PEXESO')
 level = Menu(main)
-level.add_command(label = f'Level 1', command = load1)
-level.add_command(label = f'Level 2', command = load2)
-level.add_command(label = f'Level 3', command = load3)
-level.add_command(label = f'Level 4', command = load4)
-level.add_command(label = f'Level 5', command = load5)
+level.add_command(label = f'Level 1', command = lambda:[load1(),klik.destroy()])
+level.add_command(label = f'Level 2', command = lambda:[load2(),klik.destroy()])
+level.add_command(label = f'Level 3', command = lambda:[load3(),klik.destroy()])
+level.add_command(label = f'Level 4', command = lambda:[load4(),klik.destroy()])
+level.add_command(label = f'Level 5', command = lambda:[load5(),klik.destroy()])
+level.add_command(label = f'Level 6', command = lambda:[load6(),klik.destroy()])
 main.config(menu = level)
 
 c = Canvas(main)

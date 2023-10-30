@@ -6,7 +6,7 @@ class Pexeso:
         self.a = a
         self.o = o
         self.colors = ['red','yellow','blue','lime','black']
-        self.choice = ['Arthas','Jaina','Thrall','Sylvannas','Archimonde', 'Kelthuzad','Algalon','Raszageth','Terenas','Abberus','Halion','Lich King','Sarkareth','Illidan','Darion']
+        self.choice = ['Arthas','Jaina','Thrall','Sylvannas','Archimonde', 'Kelthuzad','Algalon','Raszageth','Terenas','Abberus','Halion','Lich King','Sarkareth','Illidan','Darion','Fordragon','Wrynn','Antonidas']
         self.items = []
         self.level = level
         match level:
@@ -20,6 +20,8 @@ class Pexeso:
                 self.a0,self.b0=4,7
             case 5:
                 self.a0, self.b0 = 5, 6
+            case 6:
+                self.a0, self.b0 = 6, 6
         for i in range(int((self.a0 * self.b0) / 2)): self.items.append(self.choice[i])
         self.c.delete('all')
         self.c.config(width=2 * o + a * self.b0, height=2 * o + a * self.a0)
@@ -74,6 +76,8 @@ class Pexeso:
             time.sleep(1)
         if self.level == 5:
             return
+        if self.level >= 4:
+            self.a = 150
         self.__init__(self.o,self.a,self.c,self.level+1)
     def click(self, sur):
         a = self.a
