@@ -50,7 +50,7 @@ class Pexeso:
             for j in range(self.b0):
                 x += 1
                 s = (self.Karta(j*a, i*a, x))
-                s.shape = self.c.create_rectangle(o + j * a, o + i * a, o + j * a + a, o + i * a + a, fill = 'red')
+                s.shape = self.c.create_rectangle(o + j * a, o + i * a, o + j * a + a, o + i * a + a, fill = self.colors[0])
                 s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',20))
                 row.append(s)
             self.plocha.append(row)
