@@ -7,6 +7,8 @@ def load(clvl):
     level.entryconfig(1,label = f"Current: {clvl}")
     if clvl >= 5:
         a = 150
+    else:
+        a = 200
     current = modul.Pexeso(o, a, c, clvl, level)
 
 lvl = 0
