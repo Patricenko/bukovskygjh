@@ -3,20 +3,11 @@ import modul
 global current
 
 def load(clvl):
-    global current, o, a
-    level.entryconfig(1,label = f"Current: {clvl}")
-    if clvl >= 5 and clvl <= 10:
-        a = 150
-    elif clvl > 10:
-        a = 125
-    else:
-        a = 200
-    current = modul.Pexeso(o, a, c, clvl, level)
+    global current
+    level.entryconfig(1, label=f"Current: {clvl}")
+    current = modul.Pexeso(c, clvl)
 
 lvl = 0
-o = 10
-a = 200
-
 main = Tk()
 main.title('PEXESO')
 level = Menu(main)

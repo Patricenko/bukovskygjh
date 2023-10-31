@@ -1,11 +1,9 @@
 import random, time
 class Pexeso:
-    def __init__(self, o, a, c, level, m):
+    def __init__(self, c, level):
         self.plocha = []
         self.c = c
-        self.a = a
-        self.o = o
-        self.menu = m
+        self.o = 10
         self.colors = ['red','yellow','blue','lime','black']
         with open("mena.txt") as file:
             self.choice = [line.rstrip() for line in file]
@@ -14,33 +12,32 @@ class Pexeso:
         self.maxlevel = 12
         match level:
             case 1:
-                self.a0,self.b0,self.fontsize=4,4,20
+                self.a0,self.b0,self.fs,self.a=4,4,20,200
             case 2:
-                self.a0,self.b0,self.fontsize=4,5,20
+                self.a0,self.b0,self.fs,self.a=4,5,20,200
             case 3:
-                self.a0,self.b0,self.fontsize=4,6,20
+                self.a0,self.b0,self.fs,self.a=4,6,20,200
             case 4:
-                self.a0,self.b0,self.fontsize=4,7,20
+                self.a0,self.b0,self.fs,self.a=4,7,20,200
             case 5:
-                self.a0,self.b0,self.fontsize=5,6,20
+                self.a0,self.b0,self.fs,self.a=5,6,20,150
             case 6:
-                self.a0,self.b0,self.fontsize=6,6,20
+                self.a0,self.b0,self.fs,self.a=6,6,20,150
             case 7:
-                self.a0,self.b0,self.fontsize=6,7,20
+                self.a0,self.b0,self.fs,self.a=6,7,20,150
             case 8:
-                self.a0,self.b0,self.fontsize=6,8,20
+                self.a0,self.b0,self.fs,self.a=6,8,20,150
             case 9:
-                self.a0,self.b0,self.fontsize=6,9,20
+                self.a0,self.b0,self.fs,self.a=6,9,20,150
             case 10:
-                self.a0,self.b0,self.fontsize=6,10,20
+                self.a0,self.b0,self.fs,self.a=6,10,20,150
             case 11:
-                self.a0,self.b0,self.fontsize=7,10,17
+                self.a0,self.b0,self.fs,self.a=7,10,17,125
             case 12:
-                self.a0,self.b0,self.fontsize=7,12,17
+                self.a0,self.b0,self.fs,self.a=7,12,17,125
         for i in range(int((self.a0 * self.b0) / 2)): self.items.append(self.choice[i])
         self.c.delete('all')
-        self.c.config(width=2 * o + a * self.b0, height=2 * o + a * self.a0)
-        self.menu.entryconfig(1,label = f"Current: {self.level}")
+        self.c.config(width=2 * self.o + self.a * self.b0, height=2 * self.o + self.a * self.a0)
         self.list = 2*self.items
         self.active = None
         self.done = []
@@ -65,7 +62,7 @@ class Pexeso:
                 x += 1
                 s = (self.Karta(j*a, i*a, x))
                 s.shape = self.c.create_rectangle(o + j * a, o + i * a, o + j * a + a, o + i * a + a, fill = self.colors[0])
-                s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',self.fontsize))
+                s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',self.fs))
                 row.append(s)
             self.plocha.append(row)
 
@@ -93,12 +90,7 @@ class Pexeso:
         if self.level == self.maxlevel:
             self.c.itemconfig(wintime,font=('Arial',100) ,text='THE END, GG')
             return
-        if self.level >= 4:
-            self.a = 150
-            if self.level > 10:
-                self.a = 125
-                self.fontsize = 17
-        self.__init__(self.o,self.a,self.c,self.level+1, self.menu)
+        self.__init__(self.c,self.level+1)
     def click(self, sur):
         a = self.a
         for i in range (self.a0):
