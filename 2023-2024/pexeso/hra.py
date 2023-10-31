@@ -5,8 +5,10 @@ global current
 def load(clvl):
     global current, o, a
     level.entryconfig(1,label = f"Current: {clvl}")
-    if clvl >= 5:
+    if clvl >= 5 and clvl <= 10:
         a = 150
+    elif clvl > 10:
+        a = 125
     else:
         a = 200
     current = modul.Pexeso(o, a, c, clvl, level)
@@ -19,12 +21,18 @@ main = Tk()
 main.title('PEXESO')
 level = Menu(main)
 level.add_command(label = f"Current: {lvl}")
-level.add_command(label = f'Level 1', command = lambda:[load(1),klik.destroy()])
-level.add_command(label = f'Level 2', command = lambda:[load(2),klik.destroy()])
-level.add_command(label = f'Level 3', command = lambda:[load(3),klik.destroy()])
-level.add_command(label = f'Level 4', command = lambda:[load(4),klik.destroy()])
-level.add_command(label = f'Level 5', command = lambda:[load(5),klik.destroy()])
-level.add_command(label = f'Level 6', command = lambda:[load(6),klik.destroy()])
+level.add_command(label = f'Level 1',  command = lambda:[load(1), klik.destroy()])
+level.add_command(label = f'Level 2',  command = lambda:[load(2), klik.destroy()])
+level.add_command(label = f'Level 3',  command = lambda:[load(3), klik.destroy()])
+level.add_command(label = f'Level 4',  command = lambda:[load(4), klik.destroy()])
+level.add_command(label = f'Level 5',  command = lambda:[load(5), klik.destroy()])
+level.add_command(label = f'Level 6',  command = lambda:[load(6), klik.destroy()])
+level.add_command(label = f'Level 7',  command = lambda:[load(7), klik.destroy()])
+level.add_command(label = f'Level 8',  command = lambda:[load(8), klik.destroy()])
+level.add_command(label = f'Level 9',  command = lambda:[load(9), klik.destroy()])
+level.add_command(label = f'Level 10', command = lambda:[load(10),klik.destroy()])
+level.add_command(label = f'Level 11', command = lambda:[load(11),klik.destroy()])
+level.add_command(label = f'Level 12', command = lambda:[load(12),klik.destroy()])
 level.add_command(label = f'[CHEAT] Show', command = lambda:[current.cheat(),klik.destroy()])
 level.add_command(label = f'[CHEAT] End', command = lambda:[current.YouWon(),klik.destroy()])
 main.config(menu = level)

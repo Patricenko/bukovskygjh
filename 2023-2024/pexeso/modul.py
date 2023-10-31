@@ -7,23 +7,38 @@ class Pexeso:
         self.o = o
         self.menu = m
         self.colors = ['red','yellow','blue','lime','black']
-        self.choice = ['Arthas','Jaina','Thrall','Sylvannas','Archimonde', 'Kelthuzad','Algalon','Raszageth','Terenas','Abberus','Halion','Lich King','Sarkareth','Illidan','Darion','Fordragon','Wrynn','Antonidas']
+        with open("mena.txt") as file:
+            self.choice = [line.rstrip() for line in file]
         self.items = []
         self.level = level
+        self.maxlevel = 12
         match level:
             case 1:
-                self.a0,self.b0=4,4
+                self.a0,self.b0,self.fontsize=4,4,20
             case 2:
-                self.a0,self.b0=4,5
+                self.a0,self.b0,self.fontsize=4,5,20
             case 3:
-                self.a0,self.b0=4,6
+                self.a0,self.b0,self.fontsize=4,6,20
             case 4:
-                self.a0,self.b0=4,7
+                self.a0,self.b0,self.fontsize=4,7,20
             case 5:
-                self.a0,self.b0=5,6
+                self.a0,self.b0,self.fontsize=5,6,20
             case 6:
-                self.a0,self.b0=6,6
+                self.a0,self.b0,self.fontsize=6,6,20
+            case 7:
+                self.a0,self.b0,self.fontsize=6,7,20
+            case 8:
+                self.a0,self.b0,self.fontsize=6,8,20
+            case 9:
+                self.a0,self.b0,self.fontsize=6,9,20
+            case 10:
+                self.a0,self.b0,self.fontsize=6,10,20
+            case 11:
+                self.a0,self.b0,self.fontsize=7,10,17
+            case 12:
+                self.a0,self.b0,self.fontsize=7,12,17
         for i in range(int((self.a0 * self.b0) / 2)): self.items.append(self.choice[i])
+        print(f"Using {len(self.items)}/{len(self.choice)}")
         self.c.delete('all')
         self.c.config(width=2 * o + a * self.b0, height=2 * o + a * self.a0)
         self.menu.entryconfig(1,label = f"Current: {self.level}")
@@ -51,7 +66,7 @@ class Pexeso:
                 x += 1
                 s = (self.Karta(j*a, i*a, x))
                 s.shape = self.c.create_rectangle(o + j * a, o + i * a, o + j * a + a, o + i * a + a, fill = self.colors[0])
-                s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',20))
+                s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',self.fontsize))
                 row.append(s)
             self.plocha.append(row)
 
@@ -76,11 +91,14 @@ class Pexeso:
             self.c.itemconfig(wintime, text=-i)
             self.c.update()
             time.sleep(1)
-        if self.level == 6:
+        if self.level == self.maxlevel:
             self.c.itemconfig(wintime,font=('Arial',100) ,text='THE END, GG')
             return
         if self.level >= 4:
             self.a = 150
+            if self.level > 10:
+                self.a = 125
+                self.fontsize = 17
         self.__init__(self.o,self.a,self.c,self.level+1, self.menu)
     def click(self, sur):
         a = self.a
