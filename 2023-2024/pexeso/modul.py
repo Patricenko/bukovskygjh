@@ -38,7 +38,6 @@ class Pexeso:
             case 12:
                 self.a0,self.b0,self.fontsize=7,12,17
         for i in range(int((self.a0 * self.b0) / 2)): self.items.append(self.choice[i])
-        print(f"Using {len(self.items)}/{len(self.choice)}")
         self.c.delete('all')
         self.c.config(width=2 * o + a * self.b0, height=2 * o + a * self.a0)
         self.menu.entryconfig(1,label = f"Current: {self.level}")
