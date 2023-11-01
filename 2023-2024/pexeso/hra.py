@@ -6,11 +6,10 @@ def load(clvl):
     level.entryconfig(1, label=f"Current: {clvl}")
     current = modul.Pexeso(c, clvl)
 
-lvl = 0
 main = Tk()
 main.title('PEXESO')
 level = Menu(main)
-level.add_command(label = f"Current: {lvl}")
+level.add_command(label = f"Current: 0")
 level.add_command(label = f'Level 1',  command = lambda:[load(1), klik.destroy()])
 level.add_command(label = f'Level 2',  command = lambda:[load(2), klik.destroy()])
 level.add_command(label = f'Level 3',  command = lambda:[load(3), klik.destroy()])
