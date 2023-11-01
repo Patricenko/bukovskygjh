@@ -46,23 +46,20 @@ class Pexeso:
         self.randomize()
         self.c.bind('<Button-1>', self.click)
     class Karta:
-        def __init__(self,x,y,value):
+        def __init__(self,x,y):
             self.x = x
             self.y = y
-            self.v = value
             self.shape = None
             self.obsah = None
     def spawn(self):
         a = self.a
         o = self.o
-        x = 0
         for i in range(self.a0):
             row = []
             for j in range(self.b0):
-                x += 1
-                s = (self.Karta(j*a, i*a, x))
+                s = (self.Karta(j*a, i*a))
                 s.shape = self.c.create_rectangle(o + j * a, o + i * a, o + j * a + a, o + i * a + a, fill = self.colors[0])
-                s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text=x, font=('Arial',self.fs))
+                s.obsah = self.c.create_text(o + j * a + a/2, o + i * a + a/2, text='', font=('Arial',self.fs))
                 row.append(s)
             self.plocha.append(row)
 
