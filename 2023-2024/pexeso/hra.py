@@ -4,7 +4,7 @@ import modul
 def load(clvl):
     global current
     level.entryconfig(1, label=f"Current: {clvl}")
-    current = modul.Pexeso(c, clvl)
+    current = modul.Pexeso((c,level), clvl)
 
 main = Tk()
 main.title('PEXESO')

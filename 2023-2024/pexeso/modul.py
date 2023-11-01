@@ -2,7 +2,8 @@ import random, time
 class Pexeso:
     def __init__(self, c, level):
         self.plocha = []
-        self.c = c
+        self.c = c[0]
+        self.m = c[1]
         self.o = 10
         self.colors = ['red','yellow','blue','lime','black']
         with open("mena.txt") as file:
@@ -87,7 +88,8 @@ class Pexeso:
         if self.level == self.maxlevel:
             self.c.itemconfig(wintime,font=('Arial',100) ,text='THE END, GG')
             return
-        self.__init__(self.c,self.level+1)
+        self.m.entryconfig(1, label=f"Current: {self.level+1}")
+        self.__init__((self.c,self.m),self.level+1)
     def click(self, sur):
         a = self.a
         for i in range (self.a0):
