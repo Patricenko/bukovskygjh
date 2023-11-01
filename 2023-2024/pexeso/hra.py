@@ -1,6 +1,5 @@
 from tkinter import Canvas, Tk, Menu, Button
 import modul
-global current
 
 def load(clvl):
     global current
