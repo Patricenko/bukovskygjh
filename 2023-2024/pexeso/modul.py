@@ -11,31 +11,18 @@ class Pexeso:
         self.items = []
         self.level = level
         self.maxlevel = 12
-        match level:
-            case 1:
-                self.a0,self.b0,self.fs,self.a=4,4,20,200
-            case 2:
-                self.a0,self.b0,self.fs,self.a=4,5,20,200
-            case 3:
-                self.a0,self.b0,self.fs,self.a=4,6,20,200
-            case 4:
-                self.a0,self.b0,self.fs,self.a=4,7,20,200
-            case 5:
-                self.a0,self.b0,self.fs,self.a=5,6,20,150
-            case 6:
-                self.a0,self.b0,self.fs,self.a=6,6,20,150
-            case 7:
-                self.a0,self.b0,self.fs,self.a=6,7,20,150
-            case 8:
-                self.a0,self.b0,self.fs,self.a=6,8,20,150
-            case 9:
-                self.a0,self.b0,self.fs,self.a=6,9,20,150
-            case 10:
-                self.a0,self.b0,self.fs,self.a=6,10,20,150
-            case 11:
-                self.a0,self.b0,self.fs,self.a=7,10,17,125
-            case 12:
-                self.a0,self.b0,self.fs,self.a=7,12,17,125
+        if level == 1: self.a0,self.b0,self.fs,self.a=4,4,20,200
+        if level == 2: self.a0,self.b0,self.fs,self.a=4,5,20,200
+        if level == 3: self.a0,self.b0,self.fs,self.a=4,6,20,200
+        if level == 4: self.a0,self.b0,self.fs,self.a=4,7,20,200
+        if level == 5: self.a0,self.b0,self.fs,self.a=5,6,20,150
+        if level == 6: self.a0,self.b0,self.fs,self.a=6,6,20,150
+        if level == 7: self.a0,self.b0,self.fs,self.a=6,7,20,150
+        if level == 8: self.a0,self.b0,self.fs,self.a=6,8,20,150
+        if level == 9: self.a0,self.b0,self.fs,self.a=6,9,20,150
+        if level == 10:self.a0,self.b0,self.fs,self.a=6,10,20,150
+        if level == 11:self.a0,self.b0,self.fs,self.a=7,10,17,125
+        if level == 12:self.a0,self.b0,self.fs,self.a=7,12,17,125
         for i in range(int((self.a0 * self.b0) / 2)): self.items.append(self.choice[i])
         self.c.delete('all')
         self.c.config(width=2 * self.o + self.a * self.b0, height=2 * self.o + self.a * self.a0)
