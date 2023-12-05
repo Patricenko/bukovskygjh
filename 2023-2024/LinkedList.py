@@ -87,4 +87,3 @@ print(f"LL2:")
 ll2.vypis()
 print(f"LL:")
 ll.vypis()
-
