@@ -146,7 +146,7 @@ cmap.grid(row = 2, column = 0)
 #cmap.bind('<Button-1>',mapclick)
 o = 10
 a = 28
-v = 30
+v = 50
 colors = ('white','lightgray','grey','lightblue','blue','green','yellow','red','magenta','brown','black')
 color = 10
 ap = v*a//len(colors)
