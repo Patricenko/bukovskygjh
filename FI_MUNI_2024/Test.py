@@ -1,2 +1,4 @@
 class Binary_Tree:
-    def
+    def __init__(self, info):
+
+
