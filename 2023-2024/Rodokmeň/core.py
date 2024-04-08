@@ -22,7 +22,7 @@ def draw_tree(g):
 win = tkinter.Tk()
 win.title("Rodokmen")
 print("Pre tento WIDTH max 6 levelov")
-print("Po UPDATE  tlačítka sa ukážu v terminály dve zobrazenia Binárneho Stromu")
+print("Po UPDATE  tlačítka sa ukážu v termináli dve zobrazenia Binárneho Stromu")
 win.withdraw()
 create_input_window("Number of generations:", callback=draw_tree)
 win.mainloop()
