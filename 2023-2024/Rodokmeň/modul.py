@@ -96,7 +96,7 @@ class TButton:
         self.bt.print_tree()
         self.bt.print_tree2()
     def onClick(self):
-        create_input_window(prompt="Enter you desired change:", callback=self.updateme)
+        create_input_window(prompt="Enter your desired change:", callback=self.updateme)
 
 def create_input_window(prompt, callback):
     def on_submit():
