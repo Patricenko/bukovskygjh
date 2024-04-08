@@ -13,7 +13,7 @@ def rendom():
     zreby.clear()
     for i in range (3):
         zreby.append(random.randrange(1,50))
-    #print(zreby) #TESTING
+    print(zreby) #TESTING
 for i in range (49):
     pos.append(0)
     if x >= 700:

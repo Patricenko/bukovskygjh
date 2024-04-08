@@ -47,7 +47,7 @@ c.bind("<Button-3>",rightclick)
 c.bind("<Button-2>",scrollclick)
 c.bind('<Button-1>',leftclick)
 kruhy = []
-for i in range(500):
+for i in range(100):
     kruhy.append(Tkruh(random.randrange(100,400),random.randrange(100,400), i,20))
     kruhy[i].nahodnemen()
 while True:

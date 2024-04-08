@@ -14,13 +14,12 @@ def createTree(g):
     global strom, c
     g = int(g)
     win.deiconify()
-    c = tkinter.Canvas(win, width=WIDTH, height=HEIGHT, bg="orchid3")
+    c = tkinter.Canvas(win, width=WIDTH, height=HEIGHT, bg="pink")
     c.pack()
     c.create_text(WIDTH//2,HEIGHT//5,text="BI-TREE",font=("Arial","46","bold"))
     strom = BinaryTree(levels=g)
     TButton(c, text="Nič",x=(WIDTH-50)//2, y=10, bt=strom)
     createbuttons(g,2, (WIDTH-50)//2, "")
-
 
 HEIGHT = 450
 WIDTH = 1750
