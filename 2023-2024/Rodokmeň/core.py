@@ -21,7 +21,7 @@ def createTree(g):
     createbuttons(g,2, (WIDTH-50)//2, "")
 
 
-HEIGHT = 600
+HEIGHT = 300
 WIDTH = 1500
 win = tkinter.Tk()
 win.geometry(f"{WIDTH}x{HEIGHT}")
