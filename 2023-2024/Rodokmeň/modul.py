@@ -87,11 +87,11 @@ class TButton:
         self.level = level
         self.bt = bt
         self.pos = pos
-        self.button = tkinter.Button(self.win, text=self.text, command=self.onClick, width=4, height=1, bg="gold")
+        self.button = tkinter.Button(self.win, text=self.text, command=self.onClick, width=4, height=1, bg="black", fg="white")
         self.button.place(x=self.x, y=self.y)
     def updateme(self, text):
         self.text = text
-        self.button.config(text=self.text, bg="Lime")
+        self.button.config(text=self.text, bg="green")
         self.bt.update_value(path=self.pos, value=self.text)
         self.bt.print_tree()
         self.bt.print_tree2()
