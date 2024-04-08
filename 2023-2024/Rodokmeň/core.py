@@ -18,12 +18,12 @@ def createTree(g):
     c.pack()
     c.create_text(WIDTH//2,HEIGHT//5,text="BI-TREE",font=("Arial","46","bold"))
     strom = BinaryTree(levels=g)
-    TButton(win, text="Nič",x=(WIDTH-50)//2, y=0, bt=strom)
+    TButton(c, text="Nič",x=(WIDTH-50)//2, y=10, bt=strom)
     createbuttons(g,2, (WIDTH-50)//2, "")
 
 
 HEIGHT = 450
-WIDTH = 1500
+WIDTH = 1750
 win = tkinter.Tk()
 win.geometry(f"{WIDTH}x{HEIGHT}")
 win.title("Rodokmen")
