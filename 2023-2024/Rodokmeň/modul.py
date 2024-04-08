@@ -50,7 +50,7 @@ class BinaryTree:
             return self.rekurzia(vertex.right, moves[1:], value)
         else:
             return False
-    def print_tree(self, vertex=None, level=0):
+    def print_tree(self, vertex=None, level=1):
         if level == 0: print("##########################################################################")
         if level > self.levels: return
         if vertex is None:
