@@ -87,7 +87,7 @@ class TButton:
         self.level = level
         self.bt = bt
         self.pos = pos
-        self.button = tkinter.Button(self.win, text=self.text, command=self.onClick, width=4, height=1)
+        self.button = tkinter.Button(self.win, text=self.text, command=self.onClick, width=4, height=1, bg="gold")
         self.button.place(x=self.x, y=self.y)
     def updateme(self, text):
         self.text = text

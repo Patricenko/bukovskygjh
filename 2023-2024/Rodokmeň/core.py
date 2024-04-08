@@ -14,7 +14,7 @@ def createTree(g):
     global strom, c
     g = int(g)
     win.deiconify()
-    c = tkinter.Canvas(win, width=WIDTH, height=HEIGHT)
+    c = tkinter.Canvas(win, width=WIDTH, height=HEIGHT, bg="pink")
     c.pack()
     strom = BinaryTree(levels=g)
     TButton(win, text="Nič",x=(WIDTH-50)//2, y=0, bt=strom)
