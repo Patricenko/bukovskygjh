@@ -1,12 +1,10 @@
 import front_stack as fs
 #navrh struktury
-
 class Item:
     def __init__(self, info):
         self.info = info
         self.left = None
         self.right = None
-
 class BinaryTree:
     def __init__(self, info):
         self.root = Item(info) #self.begin fancyyyyy
@@ -23,13 +21,3 @@ class BinaryTree:
             self.printTree(item.left, l)
         else: return
         return l
-
-
-tree= BinaryTree(10)
-tree.root.right = Item(5)
-tree.root.right.right = Item(6)
-tree.root.right.left = Item(7)
-tree.root.left = Item(8)
-tree.root.left.right = Item(9)
-print(tree.printTree())
-
