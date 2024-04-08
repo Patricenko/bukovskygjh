@@ -91,7 +91,7 @@ class TButton:
         self.button.place(x=self.x, y=self.y)
     def updateme(self, text):
         self.text = text
-        self.button.config(text=self.text)
+        self.button.config(text=self.text, bg="Lime")
         self.bt.update_value(path=self.pos, value=self.text)
         self.bt.print_tree()
         self.bt.print_tree2()
