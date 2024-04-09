@@ -57,4 +57,3 @@ print(s.find("fico"))
 s.insert("keketenko","mongol")
 s.insert("zambezia","zoltan")
 s.save()
-#dorobit nacitanie a zapis do textoveho suboru s.load(neicodoplnime) potom s.save a zmeni sa nam textak
