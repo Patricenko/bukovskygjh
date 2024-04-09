@@ -91,17 +91,22 @@ class TButton:
         self.button.place(x=self.x, y=self.y)
     def updateme(self, text):
         self.text = text
-        self.button.config(text=self.text, bg="green")
         self.bt.update_value(path=self.pos, value=self.text)
+        bg = "green"
+        if self.text is None: bg = "black"; self.text="Nič"
+        self.button.config(text=self.text, bg=bg)
         self.bt.print_tree()
         self.bt.print_tree2()
     def onClick(self):
-        create_input_window(prompt="Enter your desired change:", callback=self.updateme)
+        create_input_window(prompt="Enter your desired change:", callback=self.updateme, active=True)
 
-def create_input_window(prompt, callback):
+def create_input_window(prompt, callback, active=False):
     def on_submit():
         user_input = input_field.get()
         callback(user_input)
+        window.destroy()
+    def on_setnull():
+        callback(None)
         window.destroy()
     window = tkinter.Toplevel()
     window.title(prompt)
@@ -109,5 +114,8 @@ def create_input_window(prompt, callback):
     input_field = tkinter.Entry(window)
     input_field.pack(side="top", fill="x", padx=10)
     input_field.focus_set()
+    if active:
+        submit_button = tkinter.Button(window, text="SetNULL", command=on_setnull)
+        submit_button.pack(side="bottom", fill="x", padx=10, pady=10)
     submit_button = tkinter.Button(window, text="Submit", command=on_submit)
     submit_button.pack(side="bottom", fill="x", padx=10, pady=10)
