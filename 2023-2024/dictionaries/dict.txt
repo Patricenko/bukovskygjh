@@ -1,6 +1,6 @@
-fico:   evil
-keket:  mongol
+fico: evil
+keket: mongol
 keketenko: mongol
-more:   sea
-pele:   gej
+more: sea
+pele: gej
 zambezia: zoltan

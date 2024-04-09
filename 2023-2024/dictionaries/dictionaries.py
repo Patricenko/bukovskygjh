@@ -26,8 +26,8 @@ class WordDictionary:
     def load(self, filename="dict.txt"):
         with open(filename, "r") as f:
             for line in f:
-                word, value = line.strip().split(":")
-                self.insert(word, value)
+                word, value = line.split(":")
+                self.insert(word, value.strip())
 
     def save(self, filename="dict.txt"):
         with open(filename, "w") as f:
@@ -39,21 +39,28 @@ class WordDictionary:
                         step(word + p, v.child[p])
             step('', self.begin)
 
-    def find(self, word):
+    def find(self, prefix):
         v = self.begin
-        for c in word:
+        for c in prefix:
             if v.child[c] is None:
-                return f"'{word}' not found."
+                return f"'{prefix}' not found or has no continuations."
             v = v.child[c]
-        if v.value is not None:
-            return f"{word}:{v.value}"
+        matches = []
+        def search(node, word):
+            if node.value is not None:
+                matches.append(f"{word}:{node.value}")
+            for c, child in node.child.items():
+                if child is not None:
+                    search(child, word + c)
+        search(v, prefix)
+        if matches:
+            return '\n'.join(matches)
         else:
-            return f"'{word}' not found."
-
+            return f"No words found starting with '{prefix}'."
 # Usage
 s = WordDictionary()
 s.load()
-print(s.find("fico"))
 s.insert("keketenko","mongol")
 s.insert("zambezia","zoltan")
+print(s.find("keke"))
 s.save()
