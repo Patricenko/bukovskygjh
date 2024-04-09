@@ -22,7 +22,7 @@ def createTree(g):
     createbuttons(g,2, (WIDTH-50)//2, "")
 
 HEIGHT = 450
-WIDTH = 1750
+WIDTH = 1200
 win = tkinter.Tk()
 win.geometry(f"{WIDTH}x{HEIGHT}")
 win.title("Rodokmen")
