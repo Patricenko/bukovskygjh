@@ -9,7 +9,7 @@ class WordDictionary:
         self.begin = self.Node()
         self.debug = False
 
-    def insert(self,word,value,filename):
+    def insert(self,word,value,filename, first=False):
         active = False
         if self.find(word, filename): active = True
         v = self.begin
@@ -19,7 +19,7 @@ class WordDictionary:
             v = v.child[c]
         if active: v.value += ", " + value
         else: v.value = value
-        self.save(filename)
+        if not first: self.save(filename)
         return f"Inserted {word}: {value} to {filename} successfully."
     def walk(self, v, prefix=''):
         if v.value is not None:
@@ -32,13 +32,13 @@ class WordDictionary:
         self.begin = self.Node()
         return "Erased dictionary successfully."
 
-    def load(self, filename="nameToSubject.txt"):
+    def load(self, filename, first=False):
         with open(filename, "r") as f:
             for line in f:
                 if line == '\n': continue
                 if line.split(":")[1] == "": word = line.split(":")[0]; value = ""
                 else: word, value = line.split(":")
-                self.insert(word.lower(), value.strip().lower(), filename)
+                self.insert(word.lower(), value.strip().lower(), filename, first)
         return f"Loaded {filename} successfully."
 
     def save(self, filename="dict.txt"):

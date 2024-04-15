@@ -23,17 +23,17 @@ def CenterWindowToDisplay(Screen: ct.CTk, width: int, height: int, scale_factor:
     y = int(((screen_height/2) - (height/1.5)) * scale_factor)
     return f"{width}x{height}+{x}+{y}"
 def changetype():
-    global searchtype, db
+    global searchtype, db, textFont
     if searchtype.cget("text") == "Search by name:":
-        db = WordDictionary()
-        db.load("subjectToName.txt")
+        textFont = ("Arial", 15)
+        db.erase()
+        db.load("subjectToName.txt", first=True)
         searchtype.configure(text="Search by subject:")
-        db.walk(db.begin)
     else:
-        db = WordDictionary()
-        db.load("nameToSubject.txt")
+        textFont = ("Arial", 20)
+        db.erase()
+        db.load("nameToSubject.txt", first=True)
         searchtype.configure(text="Search by name:")
-        db.walk(db.begin)
 
 def draw_admin_gui():
     global stat, admin_button, admin_window, searchtype, admin_debugger
@@ -44,7 +44,7 @@ def draw_admin_gui():
 
     if stat == "OFF":
         stat = "ON"
-        root.geometry(CenterWindowToDisplay(root, 800, 600, 1.0))
+        root.geometry(CenterWindowToDisplay(root, 1000, 600, 1.0))
         admin_button.configure(text="Admin [ON]")
         admin_window = ct.CTkFrame(root, fg_color="transparent", width=500)
         admin_window.pack(side="left", anchor="e", fill="y", expand=True, padx=10)
@@ -86,9 +86,18 @@ def search(word):
     lab.pack(anchor="w", side="top", padx=10, pady=10)
     results.append(lab)
     for i in result:
-        result_label = ct.CTkLabel(result_window, text=i, font=("Arial", 20), text_color="white")
-        result_label.pack(anchor="w", side="top", padx=20)
-        results.append(result_label)
+        if textFont == ("Arial", 15):
+            result_label = ct.CTkLabel(result_window, text=f"{i.split()[0]}", font=("Arial", 20), text_color="white")
+            result_label.pack(anchor="nw", side="top", padx=20)
+            results.append(result_label)
+            for j in range(1, len(i.split())):
+                result_label = ct.CTkLabel(result_window, text=f"{i.split()[j].capitalize().replace(',', '')}", font=textFont, text_color="white", height=2)
+                result_label.pack(anchor="nw", side="top", padx=40)
+                results.append(result_label)
+        else:
+            result_label = ct.CTkLabel(result_window, text=i, font=textFont, text_color="white")
+            result_label.pack(anchor="w", side="top", padx=20)
+            results.append(result_label)
 def draw_user_gui(callback):
     global admin_button, result_window, searchtype
     def on_submit():
@@ -105,13 +114,14 @@ def draw_user_gui(callback):
     input_field.focus_set()
     submit_button = ct.CTkButton(search_window, text="Search", command=on_submit, font=defaultFont)
     submit_button.pack(side="right", fill="x", padx=10, pady=10)
-    result_window = ct.CTkFrame(root, fg_color="transparent", width=300)
+    result_window = ct.CTkFrame(root, fg_color="transparent", width=500)
     result_window.pack(side="left", anchor="w", fill="y", expand=True)
     return
 
 ct.set_default_color_theme("green")
 ct.set_appearance_mode("dark")
 defaultFont = ("Arial", 16, "bold")
+textFont = ("Arial", 20)
 root = ct.CTk()
 root.wm_iconbitmap("gjh_logo.ico")
 stat = "OFF"
