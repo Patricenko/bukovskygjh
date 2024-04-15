@@ -9,13 +9,16 @@ class WordDictionary:
         self.begin = self.Node()
 
     def insert(self,word,value):
+        active = False
+        if self.find(word): active = True
         v = self.begin
         for c in word:
             if v.child[c] == None:
                 v.child[c] = self.Node()
             v = v.child[c]
-        v.value = value
-
+        if active: v.value += ", " + value
+        else: v.value = value
+        self.walk(self.begin)
     def walk(self, v, prefix=''):
         if v.value is not None:
             print(prefix + ' - ' + v.value)
@@ -23,11 +26,14 @@ class WordDictionary:
             if child is not None:
                 self.walk(child, prefix + c)
 
+    def erase(self):
+        self.begin = self.Node()
+
     def load(self, filename="dict.txt"):
         with open(filename, "r") as f:
             for line in f:
                 word, value = line.split(":")
-                self.insert(word, value.strip())
+                self.insert(word.lower(), value.strip())
 
     def save(self, filename="dict.txt"):
         with open(filename, "w") as f:
@@ -41,26 +47,19 @@ class WordDictionary:
 
     def find(self, prefix):
         v = self.begin
-        for c in prefix:
+        for c in prefix.lower():
             if v.child[c] is None:
-                return f"'{prefix}' not found or has no continuations."
+                return []
             v = v.child[c]
         matches = []
         def search(node, word):
             if node.value is not None:
-                matches.append(f"{word}:{node.value}")
+                matches.append(f"{word.capitalize()}: {node.value}")
             for c, child in node.child.items():
                 if child is not None:
                     search(child, word + c)
         search(v, prefix)
         if matches:
-            return '\n'.join(matches)
+            return matches
         else:
-            return f"No words found starting with '{prefix}'."
-# Usage
-s = WordDictionary()
-s.load()
-s.insert("keketenko","mongol")
-s.insert("zambezia","zoltan")
-print(s.find("keke"))
-s.save()
+            return []

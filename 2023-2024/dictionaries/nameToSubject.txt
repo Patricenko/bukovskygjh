@@ -1,0 +1,5 @@
+Matasovska: FYZ, MAT
+Hvojnikova: SJL
+Cikatricisiova: INF, SPG, CHE
+Lomen: SPG, INF, POS, DBS
+Hvajnicka: ANJ, NEJ

@@ -31,7 +31,7 @@ i = 0
 entry = ""
 for y in range (110,610,100):
     for x in range(0,400,100):
-        B = Button(main, width = 2, fg = "white", bg = "grey", text=order[i], font=("Arial", 55, "bold"), anchor = "n", command = partial(click, order[i]))
+        B = Button(main, width = 2, fg = "lime", bg = "pink", text=order[i], font=("Arial", 55, "bold"), anchor = "n", command = partial(click, order[i]))
         B.place(x=x, y=y)
         buttons.append(B)
         i += 1
