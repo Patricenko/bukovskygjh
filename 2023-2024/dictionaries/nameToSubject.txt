@@ -1,7 +1,127 @@
-cikatricisiova: INF, SPG, CHE
-hvajnicka: ANJ, NEJ
-hvojnikova: SJL
-lomen: SPG, INF, POS, DBS
-malik: CHE, MAT
-malugova: HUD
-matasovska: FYZ, MAT
+ambrozy: mat, geg, sem, seg
+argajova: tev, anj
+bakosova: inf
+banovsky: tok, obn, ant
+belajova: mat, etv, anj, sjl, tev, ved, huv, vyv
+belickova: che, ape_che
+bendikova: che, bio, ape_che, ape_bio
+bertova: pcp, inf
+bezakova: inf
+buckova: che, ape_che, sech
+capuchova: etv
+chalupkova: fyz, mat, sem, ape_fyz
+chrastinova: nej
+cikatricisiova: inf, spg
+crmoman: huv, ukl
+danisovsky: anj, tsv
+deak: dej, anj
+deakova: anj, obn, sps
+ditte: psy
+dzuriakova: vyu
+elizerova: fyz, ape_fyz, sef
+faixova: anj
+fedak: tsv, tev
+frandelova: 
+galik: fyz
+gonda: fyz
+gondova: fyz, ved, ape_fyz
+gradzka: mat
+gunisovaxc: mat, geg
+gunisovaxk: 
+hascicova: 
+hasko: tsv, tev
+horoscakova: 
+horvathova: tsv, tev
+hrapkova: sjl
+hrbata: tev, sjl, anj, vyv, ved, huv, etv
+hrenakova: etv, sjl
+hrobar: pos
+hubickova: vso, mat, inf, sjl, huv, ved
+hvojnikova: sjl
+iliasova: bio, ape_bio
+jakubec: nbv
+jamborova: anj, rak
+jancovicova: vso, sjl, mat, ved, inf, huv, vyu
+jozova: nej
+kabatova: anj
+karacsonyova: etv
+kascakova: bio, ape_bio, seb
+kindji: geg, tok, dej
+kmet: vyu, thd, etv
+kocy: mat, mat
+kolnikova: eko
+kosper: sem, mat
+kosut: sem, mat, spg, inf
+kosutova: sem, mat, cvm
+kraicova: 
+kralova: 
+krizanova: seb, che, bio, ape_che
+krskova: sja
+kucharova: anj
+kvasnicova: 
+lanator: bio
+laucekova: inf
+letanovska: sef, fyz, ape_fyz
+lichvarova: anj, kaj
+lindbloom: anj, ant
+liska: sen
+lomen: inf, sen, pcp
+luptak: tsv, tev
+luptakova: tev, tsv
+machalova: mat, deg
+malik: che, sech
+markusova: geg
+masarova: vyv, ukl, thd
+matasovska: sem, mat, ape_fyz, fyz
+matuskova: sed, dej, das
+mayer: nej
+michalovicova: ukl, sjl, deu
+minarikova: sjl, anj, kaj
+mistrik: anj, etv
+mlynarcikova: dej
+molnar: 
+molnarovaxb: anj
+molnarovaxz: anj, frj
+monosikova: sech, ape_che, che
+nemcokova: etv
+neuhold: mat, pcp
+oravec: che, bio, etv
+orenicova: sjl, vyu, hubv
+patoprsta: sja
+pavlovicsova: tsv, tev
+peckova: sjl
+pelica: vso, inf, ved, mat, anj, vyu
+pochova: sjl, ved, tev, vyv, mat, huv, etv, anj
+pokryvkova: 
+pumova: 
+razusova: 
+reiling: anj, eko
+repasky: anj, inf
+sartorisova: sja, psy, etv
+schnapp: ant
+sedlackova: mat, sjl, anj, tev, vyv, ved, huv
+seitsinger: mat, anj, ved, inf, vso
+siller: eko
+sirotna: etv, tsv
+slezak: dej, sed, das
+slusny: bio, ape_bio
+smrekova: anj, tsv
+sorfova: sjl, etv
+stefanikova: 
+strapekova: 
+stuller: 
+suchterova: sjl, esi
+svitekova: inf, mat, ved, vso
+tarasovic: anj, paj
+trupova: geg, bio, etv
+valaskova: mat
+valisova: kaj, ala, rak
+vanca: obn, dej, sps
+varga: anj, kaj, etv
+vargova: tev, etv
+vaskova: nej
+vicenova: sjl
+winczer: inf
+zahorska: sja, etv
+zajacova: nej
+zorkocy: mat

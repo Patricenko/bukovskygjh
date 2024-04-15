@@ -11,7 +11,7 @@ class WordDictionary:
 
     def insert(self,word,value,filename):
         active = False
-        if self.find(word): active = True
+        if self.find(word, filename): active = True
         v = self.begin
         for c in word:
             if v.child[c] == None:
@@ -32,11 +32,13 @@ class WordDictionary:
         self.begin = self.Node()
         return "Erased dictionary successfully."
 
-    def load(self, filename="dict.txt"):
+    def load(self, filename="nameToSubject.txt"):
         with open(filename, "r") as f:
             for line in f:
-                word, value = line.split(":")
-                self.insert(word.lower(), value.strip(), filename)
+                if line == '\n': continue
+                if line.split(":")[1] == "": word = line.split(":")[0]; value = ""
+                else: word, value = line.split(":")
+                self.insert(word.lower(), value.strip().lower(), filename)
         return f"Loaded {filename} successfully."
 
     def save(self, filename="dict.txt"):
@@ -50,7 +52,7 @@ class WordDictionary:
             step('', self.begin)
         return f"Saved {filename} successfully."
 
-    def find(self, prefix):
+    def find(self, prefix, filename):
         v = self.begin
         for c in prefix.lower():
             if v.child[c] is None:
@@ -59,7 +61,9 @@ class WordDictionary:
         matches = []
         def search(node, word):
             if node.value is not None:
-                matches.append(f"{word.capitalize()}: {node.value}")
+                if filename == "subjectToName.txt": word = word.upper(); node.value = node.value.capitalize()
+                else: word = word.capitalize(); node.value = node.value.upper()
+                matches.append(f"{word}: {node.value}")
             for c, child in node.child.items():
                 if child is not None:
                     search(child, word + c)

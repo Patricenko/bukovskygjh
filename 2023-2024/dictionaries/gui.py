@@ -2,6 +2,10 @@ import tkinter, time, asyncio
 import customtkinter as ct
 from dictionaries import *
 
+def getFile():
+    global searchtype
+    if searchtype.cget("text") == "Search by subject:": return "subjectToName.txt"
+    else: return "nameToSubject.txt"
 def timerevent(run=True):
     global admin_debugger
     if run:
@@ -19,15 +23,17 @@ def CenterWindowToDisplay(Screen: ct.CTk, width: int, height: int, scale_factor:
     y = int(((screen_height/2) - (height/1.5)) * scale_factor)
     return f"{width}x{height}+{x}+{y}"
 def changetype():
-    global searchtype
+    global searchtype, db
     if searchtype.cget("text") == "Search by name:":
-        db.erase()
+        db = WordDictionary()
         db.load("subjectToName.txt")
         searchtype.configure(text="Search by subject:")
+        db.walk(db.begin)
     else:
-        db.erase()
+        db = WordDictionary()
         db.load("nameToSubject.txt")
         searchtype.configure(text="Search by name:")
+        db.walk(db.begin)
 
 def draw_admin_gui():
     global stat, admin_button, admin_window, searchtype, admin_debugger
@@ -38,8 +44,6 @@ def draw_admin_gui():
 
     if stat == "OFF":
         stat = "ON"
-        if searchtype.cget("text") == "Search by subject:": filename = "subjectToName.txt"
-        else: filename = "nameToSubject.txt"
         root.geometry(CenterWindowToDisplay(root, 800, 600, 1.0))
         admin_button.configure(text="Admin [ON]")
         admin_window = ct.CTkFrame(root, fg_color="transparent", width=500)
@@ -54,7 +58,7 @@ def draw_admin_gui():
         admin_creator_label2.pack(side="left", anchor="nw", padx=10)
         admin_creator_entry2 = ct.CTkEntry(admin_creator)
         admin_creator_entry2.pack(side="left", anchor="nw")
-        admin_creator_button = ct.CTkButton(admin_window, text="Add and Save", font=defaultFont, command=lambda: debuglist.append(db.insert(admin_creator_entry.get().lower(),admin_creator_entry2.get().upper(),filename)))
+        admin_creator_button = ct.CTkButton(admin_window, text="Add and Save", font=defaultFont, command=lambda: debuglist.append(db.insert(admin_creator_entry.get().lower(),admin_creator_entry2.get().upper(),getFile())))
         admin_creator_button.pack(side="top", anchor="center", pady=5)
         admin_debugger = ct.CTkFrame(admin_window, fg_color="gray9", width=500)
         admin_debugger.pack(side="top", anchor="w", fill="both", expand=True)
@@ -76,7 +80,7 @@ def search(word):
             i.destroy()
     else: results = []
     if not word: debuglist.append("No search term provided."); return
-    result = db.find(word)
+    result = db.find(word,getFile())
     lab = ct.CTkLabel(result_window, text=f'For term "{word}" found {len(result)} results:', font=("Arial", 24), text_color="white")
     debuglist.append(f"Found {len(result)} results for term '{word}'.")
     lab.pack(anchor="w", side="top", padx=10, pady=10)
