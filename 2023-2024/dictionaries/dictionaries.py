@@ -7,8 +7,9 @@ class WordDictionary:
 
     def __init__(self):
         self.begin = self.Node()
+        self.debug = False
 
-    def insert(self,word,value):
+    def insert(self,word,value,filename):
         active = False
         if self.find(word): active = True
         v = self.begin
@@ -18,7 +19,8 @@ class WordDictionary:
             v = v.child[c]
         if active: v.value += ", " + value
         else: v.value = value
-        self.walk(self.begin)
+        self.save(filename)
+        return f"Inserted {word}: {value} to {filename} successfully."
     def walk(self, v, prefix=''):
         if v.value is not None:
             print(prefix + ' - ' + v.value)
@@ -28,12 +30,14 @@ class WordDictionary:
 
     def erase(self):
         self.begin = self.Node()
+        return "Erased dictionary successfully."
 
     def load(self, filename="dict.txt"):
         with open(filename, "r") as f:
             for line in f:
                 word, value = line.split(":")
-                self.insert(word.lower(), value.strip())
+                self.insert(word.lower(), value.strip(), filename)
+        return f"Loaded {filename} successfully."
 
     def save(self, filename="dict.txt"):
         with open(filename, "w") as f:
@@ -44,6 +48,7 @@ class WordDictionary:
                     if v.child[p] is not None:
                         step(word + p, v.child[p])
             step('', self.begin)
+        return f"Saved {filename} successfully."
 
     def find(self, prefix):
         v = self.begin

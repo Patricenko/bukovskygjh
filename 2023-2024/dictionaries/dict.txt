@@ -1,6 +1,5 @@
-fico: evil
-keket: mongol
-keketenko: mongol
-more: sea
-pele: gej
-zambezia: zoltan
+cikatricisiova: INF, SPG, CHE
+hvajnicka: ANJ, NEJ
+hvojnikova: SJL
+lomen: SPG, INF, POS, DBS
+matasovska: FYZ, MAT

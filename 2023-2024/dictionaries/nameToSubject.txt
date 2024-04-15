@@ -1,5 +1,7 @@
-Matasovska: FYZ, MAT
-Hvojnikova: SJL
-Cikatricisiova: INF, SPG, CHE
-Lomen: SPG, INF, POS, DBS
-Hvajnicka: ANJ, NEJ
+cikatricisiova: INF, SPG, CHE
+hvajnicka: ANJ, NEJ
+hvojnikova: SJL
+lomen: SPG, INF, POS, DBS
+malik: CHE, MAT
+malugova: HUD
+matasovska: FYZ, MAT
