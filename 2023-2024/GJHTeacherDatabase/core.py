@@ -1,6 +1,6 @@
-import tkinter, time, asyncio
 import customtkinter as ct
-from dictionaries import *
+from module import *
+from subprocess import call
 
 def getFile():
     global searchtype
@@ -28,11 +28,15 @@ def changetype():
         textFont = ("Arial", 15)
         db.erase()
         db.load("subjectToName.txt", first=True)
+        debuglist.append("Changed search type to 'Search by subject'.")
         searchtype.configure(text="Search by subject:")
     else:
+        call("python converter.py")
+        debuglist.append("Converter converted conversion.")
         textFont = ("Arial", 20)
         db.erase()
         db.load("nameToSubject.txt", first=True)
+        debuglist.append("Changed search type to 'Search by name'.")
         searchtype.configure(text="Search by name:")
 
 def draw_admin_gui():
@@ -45,7 +49,7 @@ def draw_admin_gui():
     if stat == "OFF":
         stat = "ON"
         root.geometry(CenterWindowToDisplay(root, 1000, 600, 1.0))
-        admin_button.configure(text="Admin [ON]")
+        admin_button.configure(text="Developer [ON]")
         admin_window = ct.CTkFrame(root, fg_color="transparent", width=500)
         admin_window.pack(side="left", anchor="e", fill="y", expand=True, padx=10)
         admin_creator = ct.CTkFrame(admin_window, fg_color="transparent", width=500)
@@ -58,7 +62,7 @@ def draw_admin_gui():
         admin_creator_label2.pack(side="left", anchor="nw", padx=10)
         admin_creator_entry2 = ct.CTkEntry(admin_creator)
         admin_creator_entry2.pack(side="left", anchor="nw")
-        admin_creator_button = ct.CTkButton(admin_window, text="Add and Save", font=defaultFont, command=lambda: debuglist.append(db.insert(admin_creator_entry.get().lower(),admin_creator_entry2.get().upper(),getFile())))
+        admin_creator_button = ct.CTkButton(admin_window, text="Add and Save", font=defaultFont, command=lambda: debuglist.append(db.insert(admin_creator_entry.get().lower(),admin_creator_entry2.get().lower(),"nameToSubject.txt")))
         admin_creator_button.pack(side="top", anchor="center", pady=5)
         admin_debugger = ct.CTkFrame(admin_window, fg_color="gray9", width=500)
         admin_debugger.pack(side="top", anchor="w", fill="both", expand=True)
@@ -70,7 +74,7 @@ def draw_admin_gui():
     elif stat == "ON":
         stat = "OFF"
         root.geometry(CenterWindowToDisplay(root, 500, 600, 1.0))
-        admin_button.configure(text="Admin [OFF]")
+        admin_button.configure(text="Developer [OFF]")
         admin_window.destroy()
         timerevent(False)
 def search(word):
@@ -103,7 +107,7 @@ def draw_user_gui(callback):
     def on_submit():
         user_input = input_field.get()
         callback(user_input)
-    admin_button = ct.CTkButton(root, text="Admin [OFF]", command=draw_admin_gui)
+    admin_button = ct.CTkButton(root, text="Developer [OFF]", command=draw_admin_gui)
     admin_button.pack(side="bottom", anchor="center", padx=10, pady=10)
     search_window = ct.CTkFrame(root, height=50)
     search_window.pack(side="top", fill="x")
@@ -128,7 +132,7 @@ stat = "OFF"
 results = []
 debuglist = []
 db = WordDictionary()
-debuglist.append(db.load("nameToSubject.txt"))
+debuglist.append(db.load("nameToSubject.txt", first=True))
 root.geometry(CenterWindowToDisplay(root, 500, 600, 1.0))
 root.title("GJH Teacher Database")
 draw_user_gui(search)

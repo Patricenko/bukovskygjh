@@ -1,4 +1,4 @@
-#binarny strom len s ukazovatelmi an ceu abecedu a dalej
+from subprocess import call
 class WordDictionary:
     class Node:
         def __init__(self, value=None):
@@ -19,7 +19,9 @@ class WordDictionary:
             v = v.child[c]
         if active: v.value += ", " + value
         else: v.value = value
-        if not first: self.save(filename)
+        if not first:
+            self.save(filename)
+            call("python converter.py")
         return f"Inserted {word}: {value} to {filename} successfully."
     def walk(self, v, prefix=''):
         if v.value is not None:

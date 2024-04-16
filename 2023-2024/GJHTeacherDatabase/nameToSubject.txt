@@ -3,13 +3,13 @@ argajova: tev, anj
 bakosova: inf
 banovsky: tok, obn, ant
 belajova: mat, etv, anj, sjl, tev, ved, huv, vyv
-belickova: che, ape_che
-bendikova: che, bio, ape_che, ape_bio
+belickova: che, apeche
+bendikova: che, bio, apeche, apebio
 bertova: pcp, inf
 bezakova: inf
-buckova: che, ape_che, sech
+buckova: che, apeche, sech
 capuchova: etv
-chalupkova: fyz, mat, sem, ape_fyz
+chalupkova: fyz, mat, sem, apefyz
 chrastinova: nej
 cikatricisiova: inf, spg
 crmoman: huv, ukl
@@ -18,13 +18,13 @@ deak: dej, anj
 deakova: anj, obn, sps
 ditte: psy
 dzuriakova: vyu
-elizerova: fyz, ape_fyz, sef
+elizerova: fyz, apefyz, sef
 faixova: anj
 fedak: tsv, tev
 frandelova: 
 galik: fyz
 gonda: fyz
-gondova: fyz, ved, ape_fyz
+gondova: fyz, ved, apefyz
 gradzka: mat
 gunisovaxc: mat, geg
 gunisovaxk: 
@@ -38,14 +38,14 @@ hrenakova: etv, sjl
 hrobar: pos
 hubickova: vso, mat, inf, sjl, huv, ved
 hvojnikova: sjl
-iliasova: bio, ape_bio
+iliasova: bio, apebio
 jakubec: nbv
 jamborova: anj, rak
 jancovicova: vso, sjl, mat, ved, inf, huv, vyu
 jozova: nej
 kabatova: anj
 karacsonyova: etv
-kascakova: bio, ape_bio, seb
+kascakova: bio, apebio, seb
 kindji: geg, tok, dej
 kmet: vyu, thd, etv
 kocy: mat, mat
@@ -55,26 +55,26 @@ kosut: sem, mat, spg, inf
 kosutova: sem, mat, cvm
 kraicova: 
 kralova: 
-krizanova: seb, che, bio, ape_che
+krizanova: seb, che, bio, apeche
 krskova: sja
 kucharova: anj
 kvasnicova: 
 lanator: bio
 laucekova: inf
-letanovska: sef, fyz, ape_fyz
+letanovska: sef, fyz, apefyz
 lichvarova: anj, kaj
 lindbloom: anj, ant
 liska: sen
 lomen: inf, sen, pcp
 luptak: tsv, tev
 luptakova: tev, tsv
-machalova: mat, deg
-malik: che, sech
-markusova: geg
-masarova: vyv, ukl, thd
-matasovska: sem, mat, ape_fyz, fyz
-matuskova: sed, dej, das
-mayer: nej
+machalova: MAT, DEG
+malik: CHE, SECH, INF
+markusova: GEG, spg
+masarova: VYV, UKL, THD
+matasovska: SEM, MAT, APEFYZ, FYZ
+matuskova: SED, DEJ, DAS
+mayer: NEJ
 michalovicova: ukl, sjl, deu
 minarikova: sjl, anj, kaj
 mistrik: anj, etv
@@ -82,7 +82,7 @@ mlynarcikova: dej
 molnar: 
 molnarovaxb: anj
 molnarovaxz: anj, frj
-monosikova: sech, ape_che, che
+monosikova: sech, apeche, che
 nemcokova: etv
 neuhold: mat, pcp
 oravec: che, bio, etv
@@ -104,7 +104,7 @@ seitsinger: mat, anj, ved, inf, vso
 siller: eko
 sirotna: etv, tsv
 slezak: dej, sed, das
-slusny: bio, ape_bio
+slusny: bio, apebio
 smrekova: anj, tsv
 sorfova: sjl, etv
 stefanikova: 
