@@ -110,7 +110,7 @@ def draw_user_gui(callback):
     admin_button = ct.CTkButton(root, text="Developer [OFF]", command=draw_admin_gui)
     admin_button.pack(side="bottom", anchor="center", padx=10, pady=10)
     search_window = ct.CTkFrame(root, height=50)
-    search_window.pack(side="top", fill="x")
+    search_window.pack(side="top", fill="x") 
     searchtype = ct.CTkButton(search_window, text="Search by name:", fg_color="transparent", font=defaultFont, command=changetype)
     searchtype.pack(side="left", fill="x", padx=10)
     input_field = ct.CTkEntry(search_window)
