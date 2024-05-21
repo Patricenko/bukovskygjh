@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import PhotoImage
 import time
 def rgb_to_hex(farba):
+    if farba == (0, 0, 0):
+        return '#ffffff'
     return '#{:02x}{:02x}{:02x}'.format(farba[0], farba[1], farba[2])
 
 def reset():
@@ -70,6 +72,7 @@ def rotate90():
             color2 = img.get(height-y-1, x)
             color3 = img.get(width-x-1, height-y-1)
             color4 = img.get(y, width-x-1)
+            print(color1, color2, color3, color4)
             img.put(rgb_to_hex(color4), (x, y))
             img.put(rgb_to_hex(color1), (height-y-1, x))
             img.put(rgb_to_hex(color2), (width-x-1, height-y-1))
