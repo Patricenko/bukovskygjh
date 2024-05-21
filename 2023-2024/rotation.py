@@ -1,14 +1,17 @@
 import tkinter as tk
 from tkinter import PhotoImage
-import os, signal
+import time
 def rgb_to_hex(farba):
     return '#{:02x}{:02x}{:02x}'.format(farba[0], farba[1], farba[2])
 
 def reset():
     global img, width, height
-    img = PhotoImage(file="obrazok.png")
+    img = PhotoImage(file="obrazok3.png")
     width, height = img.width(), img.height()
-    c["width"], c["height"] = width, height + 100
+    max_size = max(width, height)
+    c["width"], c["height"] = max_size, max_size
+    img["width"], img["height"] = max_size, max_size
+    width, height = max_size, max_size
     c.create_image(0, 0, anchor='nw', image=img)
     c.update()
 def rotate180():
