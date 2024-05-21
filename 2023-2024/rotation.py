@@ -1,14 +1,12 @@
 import tkinter as tk
-from tkinter import PhotoImage
 import time
 def rgb_to_hex(farba):
     if farba == (0, 0, 0):
         return '#ffffff'
     return '#{:02x}{:02x}{:02x}'.format(farba[0], farba[1], farba[2])
-
 def reset():
     global img, width, height
-    img = PhotoImage(file="obrazok.png")
+    img = tk.PhotoImage(file="obrazok3.png")
     width, height = img.width(), img.height()
     max_size = max(width, height)
     c["width"], c["height"] = max_size, max_size
@@ -47,7 +45,6 @@ def vertical():
             img.put(rgb_to_hex(color2), (x, y))
             img.put(rgb_to_hex(color1), (x, height-y-1))
         c.update()
-
 def rotate270():
     global img, width, height
     print("rotate 270")
@@ -62,7 +59,6 @@ def rotate270():
             img.put(rgb_to_hex(color4), (width-x-1, height-y-1))
             img.put(rgb_to_hex(color1), (y, width-x-1))
         c.update()
-
 def rotate90():
     global img, width, height
     print("rotate 90")
@@ -77,9 +73,6 @@ def rotate90():
             img.put(rgb_to_hex(color2), (width-x-1, height-y-1))
             img.put(rgb_to_hex(color3), (y, width-x-1))
         c.update()
-
-
-
 root = tk.Tk()
 root.title('ImageConverter')
 level = tk.Menu(root)
