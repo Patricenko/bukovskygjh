@@ -23,7 +23,7 @@ def rotate180():
         c.update()
 def horizontal():
     global img, width, height
-    print("rotate 90")
+    print("rotate horizontal")
     for y in range(height):
         for x in range(width//2):
             color1 = img.get(x, y)
@@ -34,7 +34,7 @@ def horizontal():
 
 def vertical():
     global img, width, height
-    print("rotate 90")
+    print("rotate vertical")
     for y in range(height//2):
         for x in range(width):
             color1 = img.get(x, y)
@@ -45,7 +45,7 @@ def vertical():
 
 def rotate270():
     global img, width, height
-    print("rotate 90")
+    print("rotate 270")
     for y in range(height//2):
         for x in range(width//2):
             color1 = img.get(x, y)
