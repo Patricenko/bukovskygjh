@@ -8,7 +8,7 @@ def rgb_to_hex(farba):
 
 def reset():
     global img, width, height
-    img = PhotoImage(file="obrazok3.png")
+    img = PhotoImage(file="obrazok.png")
     width, height = img.width(), img.height()
     max_size = max(width, height)
     c["width"], c["height"] = max_size, max_size
@@ -72,7 +72,6 @@ def rotate90():
             color2 = img.get(height-y-1, x)
             color3 = img.get(width-x-1, height-y-1)
             color4 = img.get(y, width-x-1)
-            print(color1, color2, color3, color4)
             img.put(rgb_to_hex(color4), (x, y))
             img.put(rgb_to_hex(color1), (height-y-1, x))
             img.put(rgb_to_hex(color2), (width-x-1, height-y-1))
