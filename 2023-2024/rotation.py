@@ -1,12 +1,12 @@
 import tkinter as tk
 import time
 def rgb_to_hex(farba):
-    if farba == (0, 0, 0):
+    if not farba:
         return '#ffffff'
     return '#{:02x}{:02x}{:02x}'.format(farba[0], farba[1], farba[2])
 def reset():
     global img, width, height
-    img = tk.PhotoImage(file="obrazok3.png")
+    img = tk.PhotoImage(file="obrazok.png")
     width, height = img.width(), img.height()
     max_size = max(width, height)
     c["width"], c["height"] = max_size, max_size
