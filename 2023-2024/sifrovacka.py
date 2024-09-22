@@ -28,3 +28,4 @@ def find_prime_factors(n):
 number = int(input("Enter a number: "))
 prime_factors = find_prime_factors(number)
 print(f"The prime factors of {number} are {prime_factors}.")
+print(0.1+0.2)
