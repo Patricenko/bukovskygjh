@@ -1,7 +1,7 @@
 import tkinter as tk
 import time
 def rgb_to_hex(farba):
-    if farba is None:
+    if not farba:
         return '#ffffff'
     return '#{:02x}{:02x}{:02x}'.format(farba[0], farba[1], farba[2])
 def reset():
