@@ -1,14 +1,6 @@
 # 9.9.2024
 import random
 t = 20
-
-def bubble_sort(p: list, n = t) -> list:
-    for i in range(n):
-        for j in range(n-1):
-            if p[j] > p[j+1]:
-                p[j], p[j+1] = p[j+1], p[j]
-    return p
-
 def merge(l: list, r: list) -> list:
     p = []
     while l and r:
@@ -42,8 +34,38 @@ def max_sort(p: list, n = t) -> list:
         max_sort(p, n-1)
     return p
 
+def bubble_sort(p: list, n = t) -> list:
+    for i in range(n):
+        for j in range(n-1-i):
+            if p[j] > p[j+1]:
+                p[j], p[j+1] = p[j+1], p[j]
+    return p
+def heap_sort(p):
+    # i ma deti 2i+1 a 2i+2, strom
+
+    def heapify(p, n, i):
+        largest = i
+        left = 2*i + 1
+        right = 2*i + 2
+        if left < n and p[i] < p[left]:
+            largest = left
+        if right < n and p[largest] < p[right]:
+            largest = right
+        if largest != i:
+            p[i], p[largest] = p[largest], p[i]
+            heapify(p, n, largest)
+        return
+
+    for i in range(len(p)//2-1, -1, -1):
+        heapify(p, len(p), i)
+    for i in range(len(p)-1, 0, -1):
+        p[i], p[0] = p[0], p[i]
+        heapify(p, i, 0)
+    return p
+
+
 p = randomize(t)
 print("Unsorted:", p)
-print("Sorted:", max_sort(p))
+print("Sorted:", heap_sort(p))
 
 
