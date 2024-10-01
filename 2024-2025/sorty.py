@@ -1,6 +1,6 @@
 # 9.9.2024
 import random
-t = 20
+t = 21
 def merge(l: list, r: list) -> list:
     p = []
     while l and r:
@@ -18,10 +18,8 @@ def merge_sort(p: list) -> list:
         r = merge_sort(p[len(p)//2:])
         return merge(l, r)
 
-def randomize(n: int, p = []) -> list:
-    for i in range(n):
-        p.append(random.randint(1, 1000))
-    return p
+def randomize(n: int) -> list:
+    return [random.randint(1, 99) for _ in range(n)]
 def max_sort(p: list, n = t) -> list:
     global max_p
     for i in range(n):
@@ -63,9 +61,31 @@ def heap_sort(p):
         heapify(p, i, 0)
     return p
 
+#@TODO
+def reverse(p: list, b, e) -> list:
+    n = 1
+    for i in range(b, (e+b)//2):
+        p[i], p[e-n] = p[e-n], p[i]
+        n += 1
+    return p
+def quick_sort(p):
+    if len(p) <= 1:
+        return p
+    pivot = p.pop(0)
+    left = []
+    right = []
+    for i in p:
+        if i < pivot:
+            left.append(i)
+        else:
+            right.append(i)
+    return quick_sort(left) + [pivot] + quick_sort(right)
+
+
 
 p = randomize(t)
 print("Unsorted:", p)
-print("Sorted:", heap_sort(p))
+print("Sorted:  ", quick_sort(p))
+print("Reversed:", reverse(quick_sort(p),0,len(p)+1))
 
 
