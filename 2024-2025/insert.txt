@@ -1,0 +1,403 @@
+@QUEST := (select max(id) from quest_template) + 1;
+@OBJECT := (select max(entry) from gameobject_template where entry<6011577) + 1;
+insert into quest_template(id, questtype, logtitle, logdescription, rewarditem1, rewardamount1) values
+(@QUEST+0,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+1,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+2,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+3,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+4,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+5,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+6,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+7,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+8,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+9,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+10,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+11,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+12,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+13,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+14,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+15,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+16,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+17,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+18,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+19,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+20,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+21,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+22,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+23,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+24,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+25,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+26,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+27,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+28,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+29,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+30,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+31,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+32,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+33,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+34,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+35,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+36,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+37,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+38,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+39,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+40,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+41,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+42,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+43,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+44,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+45,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+46,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+47,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+48,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+49,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+50,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+51,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+52,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+53,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+54,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+55,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+56,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+57,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+58,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+59,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+60,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+61,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+62,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+63,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+64,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+65,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+66,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+67,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+68,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+69,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+70,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+71,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+72,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+73,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+74,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+75,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+76,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+77,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+78,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+79,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+80,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+81,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+82,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+83,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+84,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+85,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+86,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+87,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+88,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+89,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+90,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+91,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+92,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+93,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+94,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+95,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+96,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+97,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+98,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+(@QUEST+99,0,'Truhla s odmenou','Zjisti co truhla v sobe ukryva.', 505585, 1),
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+0,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+0,@QUEST+0);
+insert into gameobject_questender(id,quest) values(@OBJECT+0,@QUEST+0);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+1,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+1,@QUEST+1);
+insert into gameobject_questender(id,quest) values(@OBJECT+1,@QUEST+1);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+2,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+2,@QUEST+2);
+insert into gameobject_questender(id,quest) values(@OBJECT+2,@QUEST+2);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+3,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+3,@QUEST+3);
+insert into gameobject_questender(id,quest) values(@OBJECT+3,@QUEST+3);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+4,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+4,@QUEST+4);
+insert into gameobject_questender(id,quest) values(@OBJECT+4,@QUEST+4);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+5,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+5,@QUEST+5);
+insert into gameobject_questender(id,quest) values(@OBJECT+5,@QUEST+5);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+6,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+6,@QUEST+6);
+insert into gameobject_questender(id,quest) values(@OBJECT+6,@QUEST+6);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+7,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+7,@QUEST+7);
+insert into gameobject_questender(id,quest) values(@OBJECT+7,@QUEST+7);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+8,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+8,@QUEST+8);
+insert into gameobject_questender(id,quest) values(@OBJECT+8,@QUEST+8);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+9,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+9,@QUEST+9);
+insert into gameobject_questender(id,quest) values(@OBJECT+9,@QUEST+9);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+10,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+10,@QUEST+10);
+insert into gameobject_questender(id,quest) values(@OBJECT+10,@QUEST+10);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+11,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+11,@QUEST+11);
+insert into gameobject_questender(id,quest) values(@OBJECT+11,@QUEST+11);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+12,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+12,@QUEST+12);
+insert into gameobject_questender(id,quest) values(@OBJECT+12,@QUEST+12);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+13,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+13,@QUEST+13);
+insert into gameobject_questender(id,quest) values(@OBJECT+13,@QUEST+13);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+14,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+14,@QUEST+14);
+insert into gameobject_questender(id,quest) values(@OBJECT+14,@QUEST+14);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+15,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+15,@QUEST+15);
+insert into gameobject_questender(id,quest) values(@OBJECT+15,@QUEST+15);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+16,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+16,@QUEST+16);
+insert into gameobject_questender(id,quest) values(@OBJECT+16,@QUEST+16);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+17,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+17,@QUEST+17);
+insert into gameobject_questender(id,quest) values(@OBJECT+17,@QUEST+17);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+18,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+18,@QUEST+18);
+insert into gameobject_questender(id,quest) values(@OBJECT+18,@QUEST+18);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+19,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+19,@QUEST+19);
+insert into gameobject_questender(id,quest) values(@OBJECT+19,@QUEST+19);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+20,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+20,@QUEST+20);
+insert into gameobject_questender(id,quest) values(@OBJECT+20,@QUEST+20);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+21,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+21,@QUEST+21);
+insert into gameobject_questender(id,quest) values(@OBJECT+21,@QUEST+21);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+22,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+22,@QUEST+22);
+insert into gameobject_questender(id,quest) values(@OBJECT+22,@QUEST+22);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+23,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+23,@QUEST+23);
+insert into gameobject_questender(id,quest) values(@OBJECT+23,@QUEST+23);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+24,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+24,@QUEST+24);
+insert into gameobject_questender(id,quest) values(@OBJECT+24,@QUEST+24);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+25,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+25,@QUEST+25);
+insert into gameobject_questender(id,quest) values(@OBJECT+25,@QUEST+25);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+26,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+26,@QUEST+26);
+insert into gameobject_questender(id,quest) values(@OBJECT+26,@QUEST+26);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+27,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+27,@QUEST+27);
+insert into gameobject_questender(id,quest) values(@OBJECT+27,@QUEST+27);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+28,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+28,@QUEST+28);
+insert into gameobject_questender(id,quest) values(@OBJECT+28,@QUEST+28);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+29,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+29,@QUEST+29);
+insert into gameobject_questender(id,quest) values(@OBJECT+29,@QUEST+29);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+30,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+30,@QUEST+30);
+insert into gameobject_questender(id,quest) values(@OBJECT+30,@QUEST+30);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+31,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+31,@QUEST+31);
+insert into gameobject_questender(id,quest) values(@OBJECT+31,@QUEST+31);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+32,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+32,@QUEST+32);
+insert into gameobject_questender(id,quest) values(@OBJECT+32,@QUEST+32);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+33,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+33,@QUEST+33);
+insert into gameobject_questender(id,quest) values(@OBJECT+33,@QUEST+33);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+34,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+34,@QUEST+34);
+insert into gameobject_questender(id,quest) values(@OBJECT+34,@QUEST+34);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+35,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+35,@QUEST+35);
+insert into gameobject_questender(id,quest) values(@OBJECT+35,@QUEST+35);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+36,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+36,@QUEST+36);
+insert into gameobject_questender(id,quest) values(@OBJECT+36,@QUEST+36);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+37,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+37,@QUEST+37);
+insert into gameobject_questender(id,quest) values(@OBJECT+37,@QUEST+37);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+38,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+38,@QUEST+38);
+insert into gameobject_questender(id,quest) values(@OBJECT+38,@QUEST+38);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+39,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+39,@QUEST+39);
+insert into gameobject_questender(id,quest) values(@OBJECT+39,@QUEST+39);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+40,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+40,@QUEST+40);
+insert into gameobject_questender(id,quest) values(@OBJECT+40,@QUEST+40);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+41,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+41,@QUEST+41);
+insert into gameobject_questender(id,quest) values(@OBJECT+41,@QUEST+41);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+42,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+42,@QUEST+42);
+insert into gameobject_questender(id,quest) values(@OBJECT+42,@QUEST+42);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+43,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+43,@QUEST+43);
+insert into gameobject_questender(id,quest) values(@OBJECT+43,@QUEST+43);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+44,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+44,@QUEST+44);
+insert into gameobject_questender(id,quest) values(@OBJECT+44,@QUEST+44);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+45,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+45,@QUEST+45);
+insert into gameobject_questender(id,quest) values(@OBJECT+45,@QUEST+45);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+46,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+46,@QUEST+46);
+insert into gameobject_questender(id,quest) values(@OBJECT+46,@QUEST+46);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+47,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+47,@QUEST+47);
+insert into gameobject_questender(id,quest) values(@OBJECT+47,@QUEST+47);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+48,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+48,@QUEST+48);
+insert into gameobject_questender(id,quest) values(@OBJECT+48,@QUEST+48);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+49,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+49,@QUEST+49);
+insert into gameobject_questender(id,quest) values(@OBJECT+49,@QUEST+49);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+50,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+50,@QUEST+50);
+insert into gameobject_questender(id,quest) values(@OBJECT+50,@QUEST+50);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+51,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+51,@QUEST+51);
+insert into gameobject_questender(id,quest) values(@OBJECT+51,@QUEST+51);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+52,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+52,@QUEST+52);
+insert into gameobject_questender(id,quest) values(@OBJECT+52,@QUEST+52);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+53,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+53,@QUEST+53);
+insert into gameobject_questender(id,quest) values(@OBJECT+53,@QUEST+53);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+54,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+54,@QUEST+54);
+insert into gameobject_questender(id,quest) values(@OBJECT+54,@QUEST+54);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+55,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+55,@QUEST+55);
+insert into gameobject_questender(id,quest) values(@OBJECT+55,@QUEST+55);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+56,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+56,@QUEST+56);
+insert into gameobject_questender(id,quest) values(@OBJECT+56,@QUEST+56);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+57,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+57,@QUEST+57);
+insert into gameobject_questender(id,quest) values(@OBJECT+57,@QUEST+57);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+58,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+58,@QUEST+58);
+insert into gameobject_questender(id,quest) values(@OBJECT+58,@QUEST+58);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+59,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+59,@QUEST+59);
+insert into gameobject_questender(id,quest) values(@OBJECT+59,@QUEST+59);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+60,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+60,@QUEST+60);
+insert into gameobject_questender(id,quest) values(@OBJECT+60,@QUEST+60);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+61,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+61,@QUEST+61);
+insert into gameobject_questender(id,quest) values(@OBJECT+61,@QUEST+61);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+62,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+62,@QUEST+62);
+insert into gameobject_questender(id,quest) values(@OBJECT+62,@QUEST+62);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+63,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+63,@QUEST+63);
+insert into gameobject_questender(id,quest) values(@OBJECT+63,@QUEST+63);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+64,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+64,@QUEST+64);
+insert into gameobject_questender(id,quest) values(@OBJECT+64,@QUEST+64);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+65,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+65,@QUEST+65);
+insert into gameobject_questender(id,quest) values(@OBJECT+65,@QUEST+65);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+66,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+66,@QUEST+66);
+insert into gameobject_questender(id,quest) values(@OBJECT+66,@QUEST+66);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+67,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+67,@QUEST+67);
+insert into gameobject_questender(id,quest) values(@OBJECT+67,@QUEST+67);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+68,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+68,@QUEST+68);
+insert into gameobject_questender(id,quest) values(@OBJECT+68,@QUEST+68);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+69,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+69,@QUEST+69);
+insert into gameobject_questender(id,quest) values(@OBJECT+69,@QUEST+69);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+70,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+70,@QUEST+70);
+insert into gameobject_questender(id,quest) values(@OBJECT+70,@QUEST+70);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+71,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+71,@QUEST+71);
+insert into gameobject_questender(id,quest) values(@OBJECT+71,@QUEST+71);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+72,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+72,@QUEST+72);
+insert into gameobject_questender(id,quest) values(@OBJECT+72,@QUEST+72);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+73,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+73,@QUEST+73);
+insert into gameobject_questender(id,quest) values(@OBJECT+73,@QUEST+73);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+74,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+74,@QUEST+74);
+insert into gameobject_questender(id,quest) values(@OBJECT+74,@QUEST+74);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+75,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+75,@QUEST+75);
+insert into gameobject_questender(id,quest) values(@OBJECT+75,@QUEST+75);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+76,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+76,@QUEST+76);
+insert into gameobject_questender(id,quest) values(@OBJECT+76,@QUEST+76);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+77,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+77,@QUEST+77);
+insert into gameobject_questender(id,quest) values(@OBJECT+77,@QUEST+77);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+78,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+78,@QUEST+78);
+insert into gameobject_questender(id,quest) values(@OBJECT+78,@QUEST+78);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+79,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+79,@QUEST+79);
+insert into gameobject_questender(id,quest) values(@OBJECT+79,@QUEST+79);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+80,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+80,@QUEST+80);
+insert into gameobject_questender(id,quest) values(@OBJECT+80,@QUEST+80);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+81,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+81,@QUEST+81);
+insert into gameobject_questender(id,quest) values(@OBJECT+81,@QUEST+81);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+82,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+82,@QUEST+82);
+insert into gameobject_questender(id,quest) values(@OBJECT+82,@QUEST+82);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+83,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+83,@QUEST+83);
+insert into gameobject_questender(id,quest) values(@OBJECT+83,@QUEST+83);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+84,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+84,@QUEST+84);
+insert into gameobject_questender(id,quest) values(@OBJECT+84,@QUEST+84);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+85,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+85,@QUEST+85);
+insert into gameobject_questender(id,quest) values(@OBJECT+85,@QUEST+85);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+86,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+86,@QUEST+86);
+insert into gameobject_questender(id,quest) values(@OBJECT+86,@QUEST+86);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+87,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+87,@QUEST+87);
+insert into gameobject_questender(id,quest) values(@OBJECT+87,@QUEST+87);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+88,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+88,@QUEST+88);
+insert into gameobject_questender(id,quest) values(@OBJECT+88,@QUEST+88);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+89,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+89,@QUEST+89);
+insert into gameobject_questender(id,quest) values(@OBJECT+89,@QUEST+89);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+90,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+90,@QUEST+90);
+insert into gameobject_questender(id,quest) values(@OBJECT+90,@QUEST+90);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+91,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+91,@QUEST+91);
+insert into gameobject_questender(id,quest) values(@OBJECT+91,@QUEST+91);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+92,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+92,@QUEST+92);
+insert into gameobject_questender(id,quest) values(@OBJECT+92,@QUEST+92);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+93,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+93,@QUEST+93);
+insert into gameobject_questender(id,quest) values(@OBJECT+93,@QUEST+93);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+94,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+94,@QUEST+94);
+insert into gameobject_questender(id,quest) values(@OBJECT+94,@QUEST+94);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+95,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+95,@QUEST+95);
+insert into gameobject_questender(id,quest) values(@OBJECT+95,@QUEST+95);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+96,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+96,@QUEST+96);
+insert into gameobject_questender(id,quest) values(@OBJECT+96,@QUEST+96);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+97,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+97,@QUEST+97);
+insert into gameobject_questender(id,quest) values(@OBJECT+97,@QUEST+97);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+98,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+98,@QUEST+98);
+insert into gameobject_questender(id,quest) values(@OBJECT+98,@QUEST+98);
+insert into gameobject_template(entry, type, displayid, name, data0) values(@OBJECT+99,2,259,'Truhla s odmenou',57);
+insert into gameobject_queststarter(id,quest) values(@OBJECT+99,@QUEST+99);
+insert into gameobject_questender(id,quest) values(@OBJECT+99,@QUEST+99);
