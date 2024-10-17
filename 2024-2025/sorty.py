@@ -1,22 +1,6 @@
 # 9.9.2024
 import random
 t = 21
-def merge(l: list, r: list) -> list:
-    p = []
-    while l and r:
-        if l[0] < r[0]:
-            p.append(l.pop(0))
-        else:
-            p.append(r.pop(0))
-    return p + l + r
-
-def merge_sort(p: list) -> list:
-    if len(p) <= 1:
-        return p
-    else:
-        l = merge_sort(p[:len(p)//2])
-        r = merge_sort(p[len(p)//2:])
-        return merge(l, r)
 
 def randomize(n: int) -> list:
     return [random.randint(1, 99) for _ in range(n)]
@@ -60,14 +44,6 @@ def heap_sort(p):
         p[i], p[0] = p[0], p[i]
         heapify(p, i, 0)
     return p
-
-#@TODO
-def reverse(p: list, b, e) -> list:
-    n = 1
-    for i in range(b, (e+b)//2):
-        p[i], p[e-n] = p[e-n], p[i]
-        n += 1
-    return p
 def quick_sort(p):
     if len(p) <= 1:
         return p
@@ -81,11 +57,57 @@ def quick_sort(p):
             right.append(i)
     return quick_sort(left) + [pivot] + quick_sort(right)
 
+def merge_sort(p):
+    def merge(l, r):
+        p = []
+        while l and r:
+            if l[0] < r[0]:
+                p.append(l.pop(0))
+            else:
+                p.append(r.pop(0))
+        return p + l + r
+    if len(p) <= 1:
+        return p
+    l = merge_sort(p[:len(p)//2])
+    r = merge_sort(p[len(p)//2:])
+    return merge(l, r)
+
+def whiletest():
+    while (chars := input()) != "0":
+        print(chars)
+
+def toRPN(arr):
+    # +-*/^()
+    stack = []
+    result = []
+    for i in arr:
+        if i in "+-":
+            while stack and stack[-1] in "+-*/^":
+                result.append(stack.pop())
+            stack.append(i)
+        elif i in "*/^":
+            while stack and stack[-1] in "*/^SSSSSSSSSSSSSSSSSS":
+                result.append(stack.pop())
+            stack.append(i)
+        elif i == "(":
+            stack.append(i)
+        elif i == ")":
+            while stack[-1] != "(":
+                result.append(stack.pop())
+            stack.pop()
+        else:
+            result.append(i)
+    while stack:
+        result.append(stack.pop())
+    return result
+
 
 
 p = randomize(t)
 print("Unsorted:", p)
+print("Sorted:  ", merge_sort(p))
 print("Sorted:  ", quick_sort(p))
-print("Reversed:", reverse(quick_sort(p),0,len(p)+1))
+print("RPNed:   ", toRPN(input()))
+whiletest() #(5^(0+3)*2*(4-5))/((1-7)*(8/9)^0)
 
 
