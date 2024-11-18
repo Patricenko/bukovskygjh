@@ -19,13 +19,14 @@ def zadanie_4(A, N):
     return vysl
 
 def riesenie_4(A, N):
+    vysl = 1
     while N > 0:
         if N % 2 == 1:
-            A = A * A
-        N = N // 2
-    return A
-
-A = 2
+            vysl *= A
+        A *= A
+        N //= 2
+    return vysl
+A = 3
 B = 4
 print(riesenie_3(A, B))
-print("riesenie: ", riesenie_4(A, B), "kontrola: ", 2**B)
+print("riesenie: ", riesenie_4(A, B), "kontrola: ", A**B)
