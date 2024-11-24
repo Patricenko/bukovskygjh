@@ -1,9 +1,15 @@
-vstup = [1] + [int(x) for x in input()]
+import math
+x = [int(i) for i in input().strip()]
 steps = 0
-for i in range(len(vstup)-1):
-    steps += 1
-    if abs(vstup[i] - vstup[i+1]) >= 5:
-        steps += 10 - abs(vstup[i] - vstup[i+1])
+print(x)
+for i in range(1,len(x)+1):
+    if i == len(x):
+        steps += 1
+        break
+    if x[i-1] < 5 and x[i] >= 5:
+        steps += abs((10-x[i])+x[i-1])
+    elif x[i-1] >= 5 and x[i] < 5:
+        steps += abs((10-x[i-1])+x[i])
     else:
-        steps += abs(vstup[i] - vstup[i+1])
+        steps += abs(x[i]-x[i-1])
 print(steps)
