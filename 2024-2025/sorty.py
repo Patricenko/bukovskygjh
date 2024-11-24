@@ -1,7 +1,7 @@
 # 9.9.2024
 import random
 t = 21
-def merge(l: list, r: list) -> list:
+def mergemergesort(l: list, r: list) -> list:
     p = []
     while l and r:
         if l[0] < r[0]:
@@ -10,7 +10,7 @@ def merge(l: list, r: list) -> list:
             p.append(r.pop(0))
     return p + l + r
 
-def merge_sort(p: list) -> list:
+def mergesort(p: list) -> list:
     if len(p) <= 1:
         return p
     else:
@@ -81,11 +81,27 @@ def quick_sort(p):
             right.append(i)
     return quick_sort(left) + [pivot] + quick_sort(right)
 
+def merge_sort(p: list) -> list:
+    def merge(l: list, r: list) -> list:
+        p = []
+        while l and r:
+            if l[0] < r[0]:
+                p.append(l.pop(0))
+            else:
+                p.append(r.pop(0))
+        return p + l + r
+    if len(p) <= 1:
+        return p
+    else:
+        l = merge_sort(p[:len(p)//2])
+        r = merge_sort(p[len(p)//2:])
+        return merge(l, r)
 
 
 p = randomize(t)
 print("Unsorted:", p)
 print("Sorted:  ", quick_sort(p))
+print("MergeSort:", merge_sort(p))
 print("Reversed:", reverse(quick_sort(p),0,len(p)+1))
 
 
