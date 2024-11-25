@@ -71,11 +71,6 @@ def merge_sort(p):
     l = merge_sort(p[:len(p)//2])
     r = merge_sort(p[len(p)//2:])
     return merge(l, r)
-
-def whiletest():
-    while (chars := input()) != "0":
-        print(chars)
-
 def toRPN(arr):
     # +-*/^()
     stack = []
@@ -102,12 +97,48 @@ def toRPN(arr):
     return result
 
 
+def radix_sort(arr):
+    def counting_sort(arr, exp):
+        n = len(arr)
+        output = [0] * n
+        count = [0] * 10
+        for i in range(n):
+            index = arr[i] // exp
+            count[index % 10] += 1
+        for i in range(1, 10):
+            count[i] += count[i - 1]
+        i = n - 1
+        while i >= 0:
+            index = arr[i] // exp
+            output[count[index % 10] - 1] = arr[i]
+            count[index % 10] -= 1
+            i -= 1
+        for i in range(n):
+            arr[i] = output[i]
+        return arr
+
+    max1 = max(arr)
+    exp = 1
+    while max1 // exp > 0:
+        counting_sort(arr, exp)
+        exp *= 10
+    return arr
+
+def radix_sort_binary(arr):
+    max_bits = len(bin(max(arr)))-2
+    for bit in range(max_bits):
+        zeroes = []
+        ones = []
+        for num in arr:
+            if num & (1 << bit):
+                ones.append(num)
+            else:
+                zeroes.append(num)
+        arr = zeroes + ones
+    return arr
+
+
 
 p = randomize(t)
-print("Unsorted:", p)
-print("Sorted:  ", merge_sort(p))
-print("Sorted:  ", quick_sort(p))
-print("RPNed:   ", toRPN(input()))
-whiletest() #(5^(0+3)*2*(4-5))/((1-7)*(8/9)^0)
-
-
+print("Unsorted:      ", p)
+print("Radix Sorted:  ", radix_sort_binary(p))
