@@ -27,6 +27,21 @@ class LinkedList:
         self.last.next = other.begin
         self.last = other.last
         other = None
+
+    def to_list(self):
+        result = []
+        current = self.begin
+        while current:
+            result.append(current.value)
+            current = current.next
+        return result
+
+    @staticmethod
+    def from_list(arr):
+        ll = LinkedList()
+        for item in arr:
+            ll.append(item)
+        return ll
         
     def insert(self,pos,value):
         if self.begin == None:
@@ -48,6 +63,8 @@ class LinkedList:
         while p != None:
             print(p.value)
             p = p.next
+
+
 
     def __iter__(self):
         self.p = self.begin

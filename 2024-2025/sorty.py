@@ -1,5 +1,6 @@
 # 9.9.2024
 import random
+from linkedlist import *
 t = 21
 
 def randomize(n: int) -> list:
@@ -138,7 +139,29 @@ def radix_sort_binary(arr):
     return arr
 
 
+def radix_sort_binary_ll(arr):
+    max_bits = len(bin(max(arr))) - 2
+    ll = LinkedList.from_list(arr)
 
+    for bit in range(max_bits):
+        zeroes = LinkedList()
+        ones = LinkedList()
+        current = ll.begin
+
+        while current:
+            if current.value & (1 << bit):
+                ones.append(current.value)
+            else:
+                zeroes.append(current.value)
+            current = current.next
+
+        zeroes.concat(ones)
+        ll = zeroes
+
+    return ll.to_list()
+
+# Example usage
 p = randomize(t)
-print("Unsorted:      ", p)
-print("Radix Sorted:  ", radix_sort_binary(p))
+print("Unsorted:         ", p)
+print("Radix Sorted:     ", radix_sort_binary(p))
+print("Radix Sorted LL:  ", radix_sort_binary_ll(p))
