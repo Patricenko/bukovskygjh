@@ -3,6 +3,8 @@ def dijkstra(graph, start):
     distances = [float('inf')] * n
     distances[start] = 0
     visited = [False] * n
+    previous = [-1] * n
+    used_graph = [[0] * n for _ in range(n)]
 
     for _ in range(n):
         min_distance = float('inf')
@@ -11,27 +13,36 @@ def dijkstra(graph, start):
             if not visited[i] and distances[i] < min_distance:
                 min_distance = distances[i]
                 current = i
-        
+
         if current == -1:
             break
-        
         visited[current] = True
-        
+
         for neighbor in range(n):
             if graph[current][neighbor] > 0 and not visited[neighbor]:
                 new_distance = distances[current] + graph[current][neighbor]
                 if new_distance < distances[neighbor]:
                     distances[neighbor] = new_distance
+                    previous[neighbor] = current
 
-    return distances
+    for i in range(n):
+        if previous[i] != -1:
+            used_graph[i][previous[i]] = graph[i][previous[i]]
+            used_graph[previous[i]][i] = graph[previous[i]][i]
+
+    return used_graph, distances
 
 graph = [
-    [0, 1, 4, 0],
-    [1, 0, 2, 6],
-    [4, 2, 0, 3],
-    [0, 6, 3, 0]
+    [0, 5, 2, 0, 0],
+    [5, 0, 1, 1, 0],
+    [2, 1, 0, 2, 7],
+    [0, 1, 2, 0, 4],
+    [0, 0, 7, 4, 0]
 ]
 
 start_node = 0
-result = dijkstra(graph, start_node)
-print(f"Shortest distances from node {start_node}: {result}")
+dijkstra = dijkstra(graph, start_node)
+print("Updated graph with used paths only:")
+for row in dijkstra[0]:
+    print(row)
+print(f"Paths: {dijkstra[1]}")
